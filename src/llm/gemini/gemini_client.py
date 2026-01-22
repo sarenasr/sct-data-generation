@@ -1,7 +1,8 @@
-"""Gemini client."""
+"""Gemini client with multi-key support."""
 
 import copy
-from typing import Any, Type
+import re
+from typing import Any, Optional, Type
 
 from google import genai
 from google.genai import types
@@ -9,8 +10,31 @@ from pydantic import BaseModel
 
 from ...config import settings
 from ...logging import get_logger
+from ..key_manager import APIKeyManager, AllKeysExhaustedException
 
 logger = get_logger(__name__)
+
+# Global key manager instance
+_key_manager: Optional[APIKeyManager] = None
+
+
+def get_key_manager() -> APIKeyManager:
+    """Get or create the global API key manager for Gemini."""
+    global _key_manager
+    if _key_manager is None:
+        keys = settings.gemini_keys_list
+        if not keys:
+            raise ValueError(
+                "No Gemini API keys provided. Set GEMINI_API_KEYS or GEMINI_API_KEY environment variable."
+            )
+        _key_manager = APIKeyManager(keys, provider="gemini")
+    return _key_manager
+
+
+def reset_key_manager():
+    """Reset the global key manager (useful for testing)."""
+    global _key_manager
+    _key_manager = None
 
 
 def _resolve_refs(schema_dict: dict, definitions: dict) -> dict:
@@ -104,21 +128,78 @@ def _clean_schema_for_gemini(schema_dict: dict) -> dict:
 
 class GeminiClient:
     """
-    Client for Google Gemini API.
+    Client for Google Gemini API with multi-key support.
     """
 
-    def __init__(self):
-        """Initialize Gemini client."""
-        self.api_key = settings.gemini_api_key
+    def __init__(self, api_key: Optional[str] = None):
+        """
+        Initialize Gemini client.
+        
+        Args:
+            api_key: Optional specific API key to use. If not provided,
+                    uses the key manager for automatic rotation.
+        """
+        self.key_manager = get_key_manager()
+        self._specific_key = api_key
+        self._client: Optional[genai.Client] = None
+        self._current_key: Optional[str] = None
 
-        if not self.api_key:
-            raise ValueError(
-                "Gemini API key not provided. Set GEMINI_API_KEY environment variable."
-            )
+        logger.info("Gemini client initialized with key manager")
 
-        self._client = genai.Client(api_key=self.api_key)
+    def _get_client(self) -> genai.Client:
+        """Get or create Gemini client with current key."""
+        if self._specific_key:
+            key = self._specific_key
+        else:
+            key = self.key_manager.get_current_key()
+        
+        # Create new client if key changed
+        if self._client is None or self._current_key != key:
+            self._client = genai.Client(api_key=key)
+            self._current_key = key
+        
+        return self._client
 
-        logger.info("Gemini client initialized")
+    def _handle_api_error(self, error: Exception, key: str) -> bool:
+        """
+        Handle API errors and determine if retry is possible.
+        
+        Returns:
+            True if should retry with different key, False otherwise.
+        """
+        error_str = str(error).lower()
+        
+        # Check for rate limit errors
+        if "429" in str(error) or "rate limit" in error_str or "resource exhausted" in error_str:
+            retry_after = self._extract_retry_after(str(error))
+            self.key_manager.mark_rate_limited(key, retry_after)
+            return True
+        
+        # Check for quota exceeded
+        if "quota" in error_str or "exceeded" in error_str:
+            self.key_manager.mark_exhausted(key, str(error))
+            return True
+        
+        # Check for authentication errors
+        if "401" in str(error) or "403" in str(error) or "invalid" in error_str and "key" in error_str:
+            self.key_manager.mark_exhausted(key, "Invalid API key")
+            return True
+        
+        # General error - mark and potentially retry
+        self.key_manager.mark_error(key, str(error))
+        return False
+
+    def _extract_retry_after(self, error_message: str) -> Optional[float]:
+        """Extract retry-after time from error message."""
+        match = re.search(r'retry after (\d+)', error_message.lower())
+        if match:
+            return float(match.group(1))
+        
+        match = re.search(r'(\d+)\s*seconds?', error_message.lower())
+        if match:
+            return float(match.group(1))
+        
+        return None
 
     def generate_simple(
         self,
@@ -127,7 +208,7 @@ class GeminiClient:
         instructions: str,
     ) -> str:
         """
-        Simple text generation.
+        Simple text generation with automatic key rotation.
 
         Args:
             input_text: Input prompt text.
@@ -136,30 +217,57 @@ class GeminiClient:
 
         Returns:
             Generated text as a string.
+            
+        Raises:
+            AllKeysExhaustedException: If all API keys are exhausted.
         """
-        try:
-            config = types.GenerateContentConfig(
-                system_instruction=instructions,
-            )
+        max_attempts = len(self.key_manager.keys) * 2
+        
+        for attempt in range(max_attempts):
+            try:
+                client = self._get_client()
+                key = self._current_key
+                
+                config = types.GenerateContentConfig(
+                    system_instruction=instructions,
+                )
 
-            logger.info(f"Generating text with model: {model}")
-            logger.debug(f"Input text length: {len(input_text)}")
+                logger.info(f"Generating text with model: {model}")
+                logger.debug(f"Input text length: {len(input_text)}")
 
-            response = self._client.models.generate_content(
-                model=model,
-                contents=input_text,
-                config=config,
-            )
+                response = client.models.generate_content(
+                    model=model,
+                    contents=input_text,
+                    config=config,
+                )
 
-            output_text = response.text
+                output_text = response.text
 
-            logger.info(f"Generation successful. Output length: {len(output_text)}")
+                # Mark success
+                self.key_manager.mark_success(key)
+                
+                logger.info(f"Generation successful. Output length: {len(output_text)}")
 
-            return output_text
+                return output_text
 
-        except Exception as e:
-            logger.error(f"Error generating text: {e}")
-            raise
+            except AllKeysExhaustedException:
+                raise
+            except Exception as e:
+                should_retry = self._handle_api_error(e, self._current_key)
+                
+                if should_retry and self.key_manager.has_available_keys():
+                    logger.info(f"Retrying with different key (attempt {attempt + 1}/{max_attempts})")
+                    self._client = None
+                    continue
+                elif not self.key_manager.has_available_keys():
+                    raise AllKeysExhaustedException(
+                        f"All API keys exhausted. Last error: {e}"
+                    )
+                else:
+                    logger.error(f"Error generating text: {e}")
+                    raise
+
+        raise AllKeysExhaustedException("Max retry attempts reached")
 
     def parse_simple(
         self,
@@ -169,7 +277,7 @@ class GeminiClient:
         instructions: str,
     ) -> Any:
         """
-        Structured generation with JSON Schema.
+        Structured generation with JSON Schema and automatic key rotation.
 
         Args:
             input_text: Input prompt text.
@@ -182,38 +290,63 @@ class GeminiClient:
 
         Raises:
             ValueError: If model refused the request or parsing failed.
+            AllKeysExhaustedException: If all API keys are exhausted.
         """
-        try:
-            # Get the JSON schema from Pydantic model and clean it for Gemini
-            json_schema = model_class.model_json_schema()
-            cleaned_schema = _clean_schema_for_gemini(json_schema)
+        max_attempts = len(self.key_manager.keys) * 2
+        
+        for attempt in range(max_attempts):
+            try:
+                client = self._get_client()
+                key = self._current_key
+                
+                # Get the JSON schema from Pydantic model and clean it for Gemini
+                json_schema = model_class.model_json_schema()
+                cleaned_schema = _clean_schema_for_gemini(json_schema)
 
-            config = types.GenerateContentConfig(
-                system_instruction=instructions,
-                response_mime_type="application/json",
-                response_schema=cleaned_schema,
-            )
+                config = types.GenerateContentConfig(
+                    system_instruction=instructions,
+                    response_mime_type="application/json",
+                    response_schema=cleaned_schema,
+                )
 
-            logger.info(f"Generating structured output with model: {model}")
-            logger.debug(f"Input text length: {len(input_text)}")
-            logger.debug(f"Output schema: {model_class.__name__}")
+                logger.info(f"Generating structured output with model: {model}")
+                logger.debug(f"Input text length: {len(input_text)}")
+                logger.debug(f"Output schema: {model_class.__name__}")
 
-            response = self._client.models.generate_content(
-                model=model,
-                contents=input_text,
-                config=config,
-            )
+                response = client.models.generate_content(
+                    model=model,
+                    contents=input_text,
+                    config=config,
+                )
 
-            # Get the text response and parse it manually with Pydantic
-            response_text = response.text
+                # Get the text response and parse it manually with Pydantic
+                response_text = response.text
 
-            # Parse the JSON response with the Pydantic model
-            output_parsed = model_class.model_validate_json(response_text)
+                # Parse the JSON response with the Pydantic model
+                output_parsed = model_class.model_validate_json(response_text)
 
-            logger.info("Structured generation successful")
+                # Mark success
+                self.key_manager.mark_success(key)
+                
+                logger.info("Structured generation successful")
 
-            return output_parsed
+                return output_parsed
 
-        except Exception as e:
-            logger.error(f"Error generating structured output: {e}")
-            raise
+            except AllKeysExhaustedException:
+                raise
+            except Exception as e:
+                should_retry = self._handle_api_error(e, self._current_key)
+                
+                if should_retry and self.key_manager.has_available_keys():
+                    logger.info(f"Retrying with different key (attempt {attempt + 1}/{max_attempts})")
+                    self._client = None
+                    continue
+                elif not self.key_manager.has_available_keys():
+                    raise AllKeysExhaustedException(
+                        f"All API keys exhausted. Last error: {e}"
+                    )
+                else:
+                    logger.error(f"Error generating structured output: {e}")
+                    raise
+
+        raise AllKeysExhaustedException("Max retry attempts reached")

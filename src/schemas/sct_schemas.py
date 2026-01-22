@@ -31,7 +31,7 @@ class SCTValidatorResult(BaseModel):
     clinical guideline than the one used for item creation.
     """
     
-    validator_guideline: Literal["american", "british", "european"] = Field(
+    validator_guideline: str = Field(
         description="Clinical guideline used by the validator (must be different from creation guideline)"
     )
     
@@ -121,9 +121,9 @@ class SCTItem(BaseModel):
         description="Clinical subdomain category (e.g., Cirrhosis_Complications, Biliary_Cholangitis)"
     )
 
-    guideline: Optional[Literal["american", "british", "european"]] = Field(
+    guideline: Optional[str] = Field(
         default=None,
-        description="Clinical guideline used as reference for this item (american, british, or european)",
+        description="Clinical guideline used as reference for this item",
     )
 
     vignette: str = Field(

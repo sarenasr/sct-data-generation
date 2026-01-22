@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guideline>
+  <metadata>
+    <title>ESMO Clinical Practice Guidelines for Hepatocellular Carcinoma</title>
+    <organization>European Society for Medical Oncology (ESMO)</organization>
+    <year>2025</year>
+  </metadata>
+
+  <epidemiology>
+    <global_burden>Sixth most common cancer and third leading cause of cancer death worldwide</global_burden>
+    <incidence>More than 900,000 new cases annually</incidence>
+    <mortality>More than 800,000 deaths annually</mortality>
+    <risk_factors>
+      <factor>Chronic viral hepatitis (HBV, HCV)</factor>
+      <factor>Alcohol-related liver disease</factor>
+      <factor>Non-alcoholic fatty liver disease (NAFLD)/MASH</factor>
+      <factor>Aflatoxin exposure</factor>
+      <factor>Metabolic syndrome and obesity</factor>
+    </risk_factors>
+  </epidemiology>
+
+  <surveillance>
+    <recommendation level="II" grade="A">
+      <target>Patients with cirrhosis of any aetiology at risk of HCC</target>
+      <modality>Ultrasound every 6 months</modality>
+      <afp>May be added to ultrasound in selected cases</afp>
+    </recommendation>
+    <recommendation level="V" grade="B">
+      <target>Non-cirrhotic patients with chronic HBV and high risk (e.g., F3 fibrosis, family history)</target>
+      <modality>Ultrasound every 6 months</modality>
+    </recommendation>
+    <exclusion>Child-Pugh C patients not listed for transplantation</exclusion>
+  </surveillance>
+
+  <diagnosis>
+    <imaging>
+      <recommendation level="II" grade="A">
+        <description>Non-invasive diagnosis of HCC in cirrhotic patients using contrast-enhanced CT or MRI</description>
+        <criteria>Arterial phase hyperenhancement with washout on portal venous/delayed phase</criteria>
+        <size_threshold>Applicable for nodules 1 cm or greater</size_threshold>
+      </recommendation>
+      <li_rads>
+        <lr5>Definite HCC - no biopsy required in cirrhosis</lr5>
+        <lr4>Probable HCC - consider biopsy or close follow-up</lr4>
+        <lr3>Intermediate - follow-up imaging or biopsy</lr3>
+        <lr_m>Probable malignancy, not HCC-specific - biopsy recommended</lr_m>
+      </li_rads>
+    </imaging>
+    <biopsy>
+      <indication>Inconclusive imaging (LI-RADS 3-4)</indication>
+      <indication>Non-cirrhotic liver</indication>
+      <indication>Atypical features (LR-M)</indication>
+      <indication>When tissue diagnosis affects treatment decisions</indication>
+    </biopsy>
+    <biomarkers>
+      <afp>Not recommended alone for diagnosis; useful in combination with imaging</afp>
+      <pet_ct>May be useful for extrahepatic staging; not routine for diagnosis</pet_ct>
+    </biomarkers>
+  </diagnosis>
+
+  <staging>
+    <bclc>
+      <recommendation level="II" grade="A">BCLC staging system recommended for prognosis and treatment allocation</recommendation>
+      <version>2022 updated version</version>
+      <stages>
+        <stage name="0">Single less than 2 cm, Child-Pugh A, PS 0</stage>
+        <stage name="A">Single or 2-3 nodules up to 3 cm, Child-Pugh A-B, PS 0</stage>
+        <stage name="B">Multinodular, Child-Pugh A-B, PS 0</stage>
+        <stage name="C">Portal invasion/extrahepatic spread, Child-Pugh A-B, PS 1-2</stage>
+        <stage name="D">Child-Pugh C or PS 3-4</stage>
+      </stages>
+    </bclc>
+    <liver_function>
+      <child_pugh>Standard assessment</child_pugh>
+      <albi>ALBI grade provides objective assessment across BCLC stages</albi>
+      <portal_hypertension>Consider HVPG or indirect markers (platelets, splenomegaly)</portal_hypertension>
+    </liver_function>
+    <extrahepatic_staging>
+      <ct_chest>Required for all patients considered for curative or systemic treatment</ct_chest>
+      <bone_scan>If symptoms or elevated alkaline phosphatase</bone_scan>
+    </extrahepatic_staging>
+  </staging>
+
+  <treatment>
+    <surgical_resection>
+      <recommendation level="III" grade="A">
+        <indication>BCLC 0/A, Child-Pugh A, no clinically significant portal hypertension</indication>
+        <outcomes>5-year survival 60-80%</outcomes>
+      </recommendation>
+      <portal_hypertension>
+        <contraindication>HVPG greater than 10 mmHg or platelets less than 100,000 with splenomegaly</contraindication>
+        <note>Selected patients with mild portal hypertension may be considered</note>
+      </portal_hypertension>
+      <laparoscopic>Preferred when feasible, especially in cirrhotic patients</laparoscopic>
+      <flr>Future liver remnant at least 40% for cirrhotic patients</flr>
+    </surgical_resection>
+
+    <liver_transplantation>
+      <recommendation level="II" grade="A">
+        <indication>BCLC A/B within transplant criteria with decompensated cirrhosis or portal hypertension</indication>
+        <criteria>Milan criteria as minimum standard</criteria>
+      </recommendation>
+      <milan_criteria>Single tumour up to 5 cm or up to 3 tumours each up to 3 cm, no vascular invasion</milan_criteria>
+      <extended_criteria>
+        <ucsf>Single up to 6.5 cm or up to 3 tumours with largest up to 4.5 cm, total up to 8 cm</ucsf>
+        <afp>AFP-based models (e.g., AFP-model) improve selection</afp>
+      </extended_criteria>
+      <bridging>
+        <recommendation level="III" grade="B">Locoregional therapy recommended when waiting time greater than 6 months</recommendation>
+        <modalities>TACE, ablation, SBRT, or TARE</modalities>
+      </bridging>
+      <downstaging>
+        <recommendation level="II" grade="B">May be considered for patients exceeding criteria</recommendation>
+        <target>Within Milan criteria after treatment</target>
+        <observation>3-6 month observation to assess tumour biology</observation>
+      </downstaging>
+      <post_transplant_ici>
+        <recommendation level="IV" grade="D">ICIs NOT recommended in post-transplant setting due to rejection risk</recommendation>
+      </post_transplant_ici>
+    </liver_transplantation>
+
+    <ablation>
+      <recommendation level="I" grade="A">
+        <indication>BCLC 0/A, tumours up to 3 cm, not suitable for resection</indication>
+        <outcomes>5-year survival 40-70%</outcomes>
+      </recommendation>
+      <modalities>
+        <rfa>Standard for tumours less than 3 cm</rfa>
+        <mwa>Alternative, may be superior for larger tumours, less heat-sink effect</mwa>
+      </modalities>
+      <percutaneous_vs_surgical>Percutaneous preferred when technically feasible</percutaneous_vs_surgical>
+      <combination>Combination with TACE may improve outcomes for 3-5 cm tumours</combination>
+    </ablation>
+
+    <tace>
+      <recommendation level="I" grade="A">
+        <indication>BCLC B (intermediate stage), preserved liver function</indication>
+        <outcomes>Median survival 26-40 months</outcomes>
+      </recommendation>
+      <technique>
+        <conventional>Lipiodol-based with doxorubicin or cisplatin</conventional>
+        <deb_tace>Drug-eluting beads - comparable efficacy to conventional</deb_tace>
+        <tae>Bland embolisation - may be comparable in some settings</tae>
+      </technique>
+      <contraindications>
+        <item>Main portal vein thrombosis</item>
+        <item>Child-Pugh C</item>
+        <item>ECOG PS greater than 2</item>
+        <item>Extensive bilobar disease with compromised function</item>
+      </contraindications>
+      <response_assessment>mRECIST recommended</response_assessment>
+      <refractoriness>Transition to systemic therapy after 2 non-responding TACE sessions</refractoriness>
+    </tace>
+
+    <tace_combination_trials>
+      <emerald_1>
+        <regimen>TACE plus durvalumab plus bevacizumab</regimen>
+        <outcomes>
+          <pfs>HR 0.77 for PFS (15 vs 8.2 months)</pfs>
+        </outcomes>
+        <note>First positive trial of TACE plus systemic therapy combination</note>
+      </emerald_1>
+      <leap_012>
+        <regimen>TACE plus pembrolizumab plus lenvatinib</regimen>
+        <outcomes>
+          <pfs>HR 0.66 for PFS (14.6 vs 10 months)</pfs>
+        </outcomes>
+      </leap_012>
+    </tace_combination_trials>
+
+    <tare>
+      <recommendation level="II" grade="B">
+        <indication>Alternative to TACE for BCLC B, particularly large/infiltrative tumours</indication>
+        <indication>May be considered for segmental portal vein invasion</indication>
+      </recommendation>
+      <products>Y90 glass or resin microspheres</products>
+      <dosimetry>Personalised dosimetry (greater than 205 Gy) improves outcomes</dosimetry>
+      <outcomes>Median survival 16-20 months</outcomes>
+      <trials>SARAH and SIRveNIB showed non-inferiority to sorafenib</trials>
+    </tare>
+
+    <radiotherapy>
+      <sbrt>
+        <recommendation level="III" grade="B">
+          <indication>Alternative when ablation not feasible</indication>
+          <indication>Bridging to transplant</indication>
+        </recommendation>
+        <outcomes>Local control 87-100%</outcomes>
+      </sbrt>
+    </radiotherapy>
+
+    <systemic_therapy>
+      <first_line>
+        <recommendation level="I" grade="A" consensus="100%">
+          <description>Combination therapy with PD-1/PD-L1 inhibitors for advanced HCC</description>
+        </recommendation>
+        
+        <regimen name="Atezolizumab plus Bevacizumab">
+          <evidence>IMbrave 150 (Phase III)</evidence>
+          <indication>BCLC C or TACE-refractory BCLC B, Child-Pugh A</indication>
+          <outcomes>
+            <median_os>19.2 months vs 13.4 months (sorafenib)</median_os>
+            <orr>27.3% vs 11.9%</orr>
+            <hr_os>0.66 (95% CI 0.52-0.85)</hr_os>
+          </outcomes>
+          <egd_requirement>Upper endoscopy within 6 months before treatment</egd_requirement>
+          <esmo_mcbs>Score 4</esmo_mcbs>
+        </regimen>
+
+        <regimen name="Durvalumab plus Tremelimumab (STRIDE)">
+          <evidence>HIMALAYA (Phase III)</evidence>
+          <outcomes>
+            <median_os>16.43 months vs 13.77 months (sorafenib)</median_os>
+            <three_year_os>30.7% vs 20.2%</three_year_os>
+            <hr_os>0.78 (95% CI 0.65-0.92)</hr_os>
+          </outcomes>
+          <schedule>Single tremelimumab 300 mg plus durvalumab 1500 mg, then durvalumab q4w</schedule>
+          <advantage>Alternative for patients unsuitable for bevacizumab</advantage>
+          <esmo_mcbs>Score 3</esmo_mcbs>
+        </regimen>
+
+        <regimen name="Nivolumab plus Ipilimumab">
+          <evidence>CheckMate 9DW (Phase III)</evidence>
+          <outcomes>
+            <median_os>23.7 months vs 20.6 months (lenvatinib/sorafenib)</median_os>
+            <orr>36% vs 13%</orr>
+          </outcomes>
+          <schedule>Nivolumab 1 mg/kg plus ipilimumab 3 mg/kg q3w x 4 cycles, then nivolumab q4w</schedule>
+        </regimen>
+
+        <regimen name="Lenvatinib">
+          <evidence>REFLECT (Phase III)</evidence>
+          <outcomes>
+            <median_os>13.6 months (non-inferior to sorafenib)</median_os>
+            <orr>24% vs 9%</orr>
+          </outcomes>
+          <indication>Alternative when immunotherapy contraindicated</indication>
+          <dose>12 mg daily (greater than or equal to 60 kg) or 8 mg daily (less than 60 kg)</dose>
+        </regimen>
+
+        <regimen name="Sorafenib">
+          <evidence>SHARP, Asia-Pacific trials</evidence>
+          <outcomes>
+            <median_os>10.7 months vs 7.9 months (placebo)</median_os>
+            <hr_os>0.69</hr_os>
+          </outcomes>
+          <indication>Alternative when immunotherapy contraindicated</indication>
+          <dose>400 mg twice daily</dose>
+        </regimen>
+      </first_line>
+
+      <aetiology_consideration>
+        <recommendation level="I" grade="A" consensus="100%">Aetiology should NOT influence systemic therapy choice</recommendation>
+        <evidence>Meta-analyses confirm ICI benefit across all aetiologies including non-viral</evidence>
+      </aetiology_consideration>
+
+      <second_line>
+        <recommendation level="IV" grade="B" consensus="100%">TKI recommended after progression on ICI-based combinations</recommendation>
+        
+        <regimen name="Regorafenib">
+          <evidence>RESORCE trial</evidence>
+          <outcomes>
+            <median_os>10.6 months vs 7.8 months</median_os>
+            <hr>0.63</hr>
+          </outcomes>
+          <indication>After sorafenib or TKI progression</indication>
+        </regimen>
+
+        <regimen name="Cabozantinib">
+          <evidence>CELESTIAL trial</evidence>
+          <outcomes>
+            <median_os>10.2 months vs 8.0 months</median_os>
+            <hr>0.76</hr>
+          </outcomes>
+          <indication>Second or third line</indication>
+          <post_ici>Phase II data supports activity after ICI</post_ici>
+        </regimen>
+
+        <regimen name="Ramucirumab">
+          <evidence>REACH-2 trial</evidence>
+          <outcomes>
+            <median_os>8.5 months vs 7.3 months</median_os>
+            <hr>0.71</hr>
+          </outcomes>
+          <indication>Second line, AFP greater than or equal to 400 ng/mL</indication>
+        </regimen>
+      </second_line>
+
+      <child_pugh_b>
+        <recommendation level="III" grade="C" consensus="100%">
+          <description>Not routinely treated outside trials, but Child-Pugh B7-B8 may be considered</description>
+        </recommendation>
+        <data>Limited survival benefit; sorafenib mOS 3.6-6 months; atezolizumab-bevacizumab mOS 6-6.7 months</data>
+      </child_pugh_b>
+
+      <post_transplant_recurrence>
+        <recommendation level="IV" grade="C" consensus="100%">
+          <description>Sorafenib/lenvatinib may be considered; ICIs NOT recommended</description>
+        </recommendation>
+        <ici_risk>High risk of graft rejection with checkpoint inhibitors</ici_risk>
+      </post_transplant_recurrence>
+
+      <oligometastatic_progression>
+        <recommendation level="V" grade="C" consensus="95%">Consider local therapy while continuing systemic treatment</recommendation>
+      </oligometastatic_progression>
+
+      <ici_discontinuation>
+        <recommendation level="IV" grade="C" consensus="100%">May discuss discontinuation after sustained response (greater than or equal to 2 years)</recommendation>
+      </ici_discontinuation>
+
+      <treatment_beyond_progression>
+        <recommendation level="III" grade="C" consensus="87%">May continue if clinical benefit observed</recommendation>
+      </treatment_beyond_progression>
+    </systemic_therapy>
+
+    <adjuvant_therapy>
+      <imb rave050>
+        <regimen>Atezolizumab plus bevacizumab after resection/ablation</regimen>
+        <population>High-risk HCC (microvascular invasion, poor differentiation, larger tumours)</population>
+        <outcomes>
+          <rfs>Improved recurrence-free survival (HR 0.72)</rfs>
+        </outcomes>
+        <status>First positive adjuvant trial in HCC</status>
+        <recommendation level="II" grade="B">May be considered for high-risk patients</recommendation>
+      </imb rave050>
+    </adjuvant_therapy>
+  </treatment>
+
+  <response_assessment>
+    <recommendation level="I" grade="A" consensus="92%">
+      <description>RECIST v1.1 as primary assessment for systemic therapy trials</description>
+      <mrecist>mRECIST may provide complementary information for locoregional therapy</mrecist>
+    </recommendation>
+    <endpoints>
+      <recommendation level="I" grade="A" consensus="100%">OS should remain primary endpoint for RCTs</recommendation>
+    </endpoints>
+  </response_assessment>
+
+  <follow_up>
+    <after_curative_treatment>
+      <imaging>CT or MRI every 3-4 months for 2 years, then every 6 months</imaging>
+      <afp>Every 3-4 months if elevated at baseline</afp>
+    </after_curative_treatment>
+    <on_systemic_therapy>
+      <recommendation level="III" grade="A">Clinical evaluation and imaging (CT/MRI) every 3-4 months</recommendation>
+    </on_systemic_therapy>
+  </follow_up>
+
+  <palliative_care>
+    <indication>BCLC D, poor liver function (Child-Pugh C not for transplant), poor performance status</indication>
+    <components>
+      <component>Symptom management</component>
+      <component>Psychological support</component>
+      <component>Advance care planning</component>
+    </components>
+  </palliative_care>
+</guideline>

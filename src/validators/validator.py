@@ -16,8 +16,8 @@ class SCTValidator:
     # Valid options
     VALID_OPTIONS = ["+2", "+1", "0", "-1", "-2"]
 
-    # Valid domains (regex pattern)
-    DOMAIN_PATTERN = re.compile(r"^[A-Za-z0-9_]{3,40}$")
+    # Valid domains (regex pattern - allow spaces and common punctuation for disease names)
+    DOMAIN_PATTERN = re.compile(r"^[A-Za-z0-9_ \-()]{3,60}$")
 
     def __init__(self):
         """Initialize the validator."""

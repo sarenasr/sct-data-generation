@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clinical-guideline>
+  <metadata>
+    <title>ESMO Clinical Practice Guideline for Biliary Tract Cancer</title>
+    <source>European Society for Medical Oncology (ESMO)</source>
+    <scope>Diagnosis, treatment and follow-up of biliary tract cancer</scope>
+    <disease>Biliary Tract Cancer (Cholangiocarcinoma, Gallbladder Cancer)</disease>
+  </metadata>
+
+  <epidemiology>
+    <incidence>
+      <description>Biliary tract cancers (BTCs) are a heterogeneous group of tumours arising from the biliary tree, including intrahepatic cholangiocarcinoma (iCCA), perihilar cholangiocarcinoma (pCCA), distal cholangiocarcinoma (dCCA) and gallbladder cancer (GBC)</description>
+      <geographic-variation>Higher incidence in East Asia, South America, and Eastern Europe</geographic-variation>
+    </incidence>
+    <risk-factors>
+      <factor>Primary sclerosing cholangitis (PSC)</factor>
+      <factor>Hepatolithiasis</factor>
+      <factor>Liver fluke infection (Opisthorchis viverrini, Clonorchis sinensis)</factor>
+      <factor>Choledochal cysts</factor>
+      <factor>Caroli disease</factor>
+      <factor>Cirrhosis</factor>
+      <factor>Chronic viral hepatitis (HBV, HCV)</factor>
+      <factor>Obesity and metabolic syndrome</factor>
+    </risk-factors>
+  </epidemiology>
+
+  <diagnosis>
+    <pathology>
+      <classification>
+        <type name="Intrahepatic cholangiocarcinoma (iCCA)">
+          <subtype>Large duct type</subtype>
+          <subtype>Small duct type</subtype>
+        </type>
+        <type name="Perihilar cholangiocarcinoma (pCCA)"/>
+        <type name="Distal cholangiocarcinoma (dCCA)"/>
+        <type name="Gallbladder cancer (GBC)"/>
+      </classification>
+      <histology>
+        <description>Most BTCs are adenocarcinomas</description>
+        <immunohistochemistry>
+          <marker>CK7 positive</marker>
+          <marker>CK19 positive</marker>
+          <marker>CK20 typically negative</marker>
+        </immunohistochemistry>
+      </histology>
+    </pathology>
+
+    <molecular-biology>
+      <targetable-alterations>
+        <alteration gene="FGFR2" type="fusion/rearrangement" frequency="10-16% iCCA">
+          <therapy>Pemigatinib, infigratinib, futibatinib</therapy>
+          <escat-score>I-A</escat-score>
+        </alteration>
+        <alteration gene="IDH1" type="mutation" frequency="10-20% iCCA">
+          <therapy>Ivosidenib</therapy>
+          <escat-score>I-A</escat-score>
+        </alteration>
+        <alteration gene="BRAF" type="V600E mutation" frequency="3-5%">
+          <therapy>Dabrafenib + trametinib</therapy>
+          <escat-score>II-A</escat-score>
+        </alteration>
+        <alteration gene="HER2" type="amplification/mutation" frequency="5-15%">
+          <therapy>Trastuzumab-based therapy</therapy>
+          <escat-score>III-A</escat-score>
+        </alteration>
+        <alteration gene="MSI-H/dMMR" frequency="1-2%">
+          <therapy>Pembrolizumab</therapy>
+          <escat-score>I-A</escat-score>
+        </alteration>
+        <alteration gene="NTRK" type="fusion" frequency="&lt;1%">
+          <therapy>Larotrectinib, entrectinib</therapy>
+          <escat-score>I-A</escat-score>
+        </alteration>
+      </targetable-alterations>
+      <recommendation>Comprehensive genomic profiling recommended for advanced disease</recommendation>
+    </molecular-biology>
+
+    <imaging>
+      <modality name="CT">
+        <indication>Initial diagnosis and staging</indication>
+        <protocol>Multi-phase contrast-enhanced CT of chest, abdomen and pelvis</protocol>
+      </modality>
+      <modality name="MRI/MRCP">
+        <indication>Liver lesion characterisation, biliary anatomy</indication>
+        <advantage>Superior for intrahepatic lesion detection</advantage>
+      </modality>
+      <modality name="FDG-PET/CT">
+        <indication>Detection of occult metastases</indication>
+        <sensitivity>88% for lymph node metastases</sensitivity>
+        <specificity>69% for lymph node metastases</specificity>
+      </modality>
+      <modality name="EUS">
+        <indication>Lymph node sampling, distal bile duct assessment</indication>
+      </modality>
+    </imaging>
+  </diagnosis>
+
+  <staging>
+    <system>AJCC/UICC 8th edition TNM staging</system>
+    <separate-staging>
+      <category>Intrahepatic cholangiocarcinoma</category>
+      <category>Perihilar cholangiocarcinoma</category>
+      <category>Distal cholangiocarcinoma</category>
+      <category>Gallbladder cancer</category>
+    </separate-staging>
+    <classification name="Bismuth-Corlette" application="Perihilar cholangiocarcinoma">
+      <type number="I">Below confluence of left and right hepatic ducts</type>
+      <type number="II">Reaching the confluence</type>
+      <type number="IIIa">Occluding the common hepatic duct and extending to right hepatic duct</type>
+      <type number="IIIb">Occluding the common hepatic duct and extending to left hepatic duct</type>
+      <type number="IV">Multicentric or bilateral intrahepatic segmental involvement</type>
+    </classification>
+  </staging>
+
+  <treatment>
+    <surgical>
+      <resection>
+        <indication>Localised disease without distant metastases</indication>
+        <goal>R0 resection (complete resection with negative margins)</goal>
+        <procedures>
+          <procedure cancer-type="iCCA">Hepatectomy with adequate margins</procedure>
+          <procedure cancer-type="pCCA">En bloc hepatectomy with extrahepatic bile duct resection</procedure>
+          <procedure cancer-type="dCCA">Pancreaticoduodenectomy</procedure>
+          <procedure cancer-type="GBC">Cholecystectomy with hepatic resection</procedure>
+        </procedures>
+        <lymphadenectomy>Regional lymphadenectomy recommended (minimum 6 nodes)</lymphadenectomy>
+      </resection>
+      <liver-transplantation>
+        <indication>Selected pCCA patients under strict protocols (Mayo protocol)</indication>
+        <criteria>
+          <criterion>Tumour ≤3 cm radial diameter</criterion>
+          <criterion>No intrahepatic or extrahepatic metastases</criterion>
+          <criterion>Neoadjuvant chemoradiation</criterion>
+        </criteria>
+        <survival>5-year survival 65-74% with protocol</survival>
+      </liver-transplantation>
+    </surgical>
+
+    <adjuvant-therapy>
+      <recommendation level="I" grade="A">
+        <regimen>Capecitabine for 6 months</regimen>
+        <evidence>BILCAP trial - improved median OS (51.1 vs 36.4 months, HR 0.81)</evidence>
+        <dose>1250 mg/m² twice daily, days 1-14, every 3 weeks for 8 cycles</dose>
+      </recommendation>
+      <alternative>
+        <regimen>S-1 (oral fluoropyrimidine)</regimen>
+        <evidence>JCOG1202 ASCOT trial - improved relapse-free survival</evidence>
+      </alternative>
+      <chemoradiation>
+        <indication>R1 resection (positive margins)</indication>
+        <regimen>Fluoropyrimidine-based concurrent chemoradiation</regimen>
+      </chemoradiation>
+    </adjuvant-therapy>
+
+    <advanced-disease>
+      <first-line>
+        <standard-of-care>
+          <regimen>Gemcitabine plus cisplatin plus durvalumab</regimen>
+          <evidence>TOPAZ-1 trial - improved OS (HR 0.80)</evidence>
+          <dosing>
+            <drug name="Gemcitabine">1000 mg/m² days 1, 8</drug>
+            <drug name="Cisplatin">25 mg/m² days 1, 8</drug>
+            <drug name="Durvalumab">1500 mg day 1</drug>
+            <cycle>Every 3 weeks</cycle>
+          </dosing>
+        </standard-of-care>
+        <alternative>
+          <regimen>Gemcitabine plus cisplatin (if durvalumab unavailable)</regimen>
+          <evidence>ABC-02 trial - median OS 11.7 months</evidence>
+        </alternative>
+        <alternative>
+          <regimen>Gemcitabine plus S-1</regimen>
+          <indication>Patients with contraindication to cisplatin</indication>
+        </alternative>
+      </first-line>
+
+      <second-line>
+        <standard>
+          <regimen>FOLFOX (5-FU/leucovorin/oxaliplatin)</regimen>
+          <evidence>ABC-06 trial - improved OS vs active symptom control (HR 0.69)</evidence>
+        </standard>
+        <targeted-therapy>
+          <option mutation="IDH1">
+            <drug>Ivosidenib</drug>
+            <evidence>ClarIDHy trial - improved PFS vs placebo</evidence>
+          </option>
+          <option mutation="FGFR2 fusion/rearrangement">
+            <drug>Pemigatinib</drug>
+            <orr>36%</orr>
+            <pfs>6.9 months</pfs>
+          </option>
+          <option mutation="FGFR2 fusion/rearrangement">
+            <drug>Infigratinib</drug>
+            <orr>23%</orr>
+          </option>
+          <option mutation="FGFR2 fusion/rearrangement">
+            <drug>Futibatinib</drug>
+            <orr>42%</orr>
+            <pfs>9 months</pfs>
+          </option>
+          <option mutation="MSI-H/dMMR">
+            <drug>Pembrolizumab</drug>
+            <indication>If not received durvalumab in first-line</indication>
+          </option>
+          <option mutation="BRAF V600E">
+            <drug>Dabrafenib plus trametinib</drug>
+            <evidence>ROAR basket trial</evidence>
+          </option>
+          <option mutation="HER2 amplification">
+            <drug>Trastuzumab-based therapy</drug>
+            <drug>Trastuzumab deruxtecan</drug>
+          </option>
+        </targeted-therapy>
+        <alternative>
+          <regimen>FOLFIRI (if contraindication to oxaliplatin)</regimen>
+        </alternative>
+        <alternative>
+          <regimen>Liposomal irinotecan + 5-FU/LV</regimen>
+          <evidence>NIFTY trial</evidence>
+        </alternative>
+      </second-line>
+    </advanced-disease>
+
+    <locoregional-therapy>
+      <modality name="Transarterial chemoembolisation (TACE)">
+        <indication>Unresectable liver-confined disease</indication>
+      </modality>
+      <modality name="Selective internal radiation therapy (SIRT/Y90)">
+        <indication>Unresectable liver-confined disease</indication>
+      </modality>
+      <modality name="Hepatic arterial infusion (HAI)">
+        <indication>Unresectable liver-confined disease</indication>
+      </modality>
+      <modality name="Stereotactic body radiotherapy (SBRT)">
+        <indication>Locally advanced unresectable disease</indication>
+      </modality>
+      <modality name="Ablation">
+        <indication>Small (&lt;2 cm) unresectable tumours</indication>
+      </modality>
+    </locoregional-therapy>
+  </treatment>
+
+  <supportive-care>
+    <biliary-drainage>
+      <indication>Obstructive jaundice</indication>
+      <methods>
+        <method>ERCP with stent placement</method>
+        <method>Percutaneous transhepatic drainage</method>
+      </methods>
+      <stent-selection>Metal stents preferred for palliation; plastic stents for preoperative drainage</stent-selection>
+    </biliary-drainage>
+    <symptom-management>
+      <symptom name="Pruritus">
+        <treatment>Rifampicin, naltrexone, sertraline</treatment>
+      </symptom>
+      <symptom name="Pain">
+        <treatment>WHO analgesic ladder, coeliac plexus block</treatment>
+      </symptom>
+    </symptom-management>
+  </supportive-care>
+
+  <follow-up>
+    <schedule>
+      <period duration="2 years">Every 3-6 months</period>
+      <period duration="after 2 years">Every 6-12 months</period>
+    </schedule>
+    <assessments>
+      <assessment>Clinical examination</assessment>
+      <assessment>Tumour markers (CA 19-9, CEA)</assessment>
+      <assessment>Cross-sectional imaging (CT or MRI)</assessment>
+    </assessments>
+  </follow-up>
+
+  <recommendations-summary>
+    <recommendation category="Diagnosis">
+      <text>Histological confirmation required; comprehensive genomic profiling recommended for advanced disease</text>
+      <evidence-level>I</evidence-level>
+      <grade>A</grade>
+    </recommendation>
+    <recommendation category="Resectable disease">
+      <text>Surgical resection with R0 intent; adjuvant capecitabine for 6 months</text>
+      <evidence-level>I</evidence-level>
+      <grade>A</grade>
+    </recommendation>
+    <recommendation category="Advanced disease first-line">
+      <text>Gemcitabine plus cisplatin plus durvalumab</text>
+      <evidence-level>I</evidence-level>
+      <grade>A</grade>
+    </recommendation>
+    <recommendation category="Advanced disease second-line">
+      <text>FOLFOX; targeted therapy based on molecular profiling (FGFR2, IDH1, MSI-H, BRAF, HER2, NTRK)</text>
+      <evidence-level>I-II</evidence-level>
+      <grade>A-B</grade>
+    </recommendation>
+  </recommendations-summary>
+</clinical-guideline>

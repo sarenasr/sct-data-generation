@@ -106,22 +106,22 @@ def export_to_csv(output_path: Path, items: List[SCTItem]) -> None:
     logger.info(f"  Format: Hierarchical (vignette shown once per case, {len(items)} cases total)")
 
 
-def load_all_generated_items(generated_dir: Path) -> List[SCTItem]:
+def load_all_generated_items(validated_dir: Path) -> List[SCTItem]:
     """
-    Load all JSON files from the generated directory.
+    Load all JSON files from the validated directory.
 
     Args:
-        generated_dir: Path to the directory containing generated JSON files.
+        validated_dir: Path to the directory containing validated JSON files.
 
     Returns:
         List of SCTItem objects loaded from JSON files.
     """
-    if not generated_dir.exists():
-        logger.warning(f"Generated directory does not exist: {generated_dir}")
+    if not validated_dir.exists():
+        logger.warning(f"Validated directory does not exist: {validated_dir}")
         return []
 
-    json_files = list(generated_dir.glob("sct_*.json"))
-    logger.info(f"Found {len(json_files)} JSON files in {generated_dir}")
+    json_files = list(validated_dir.glob("sct_*.json"))
+    logger.info(f"Found {len(json_files)} JSON files in {validated_dir}")
 
     items = []
     for json_file in json_files:
@@ -145,21 +145,21 @@ def load_all_generated_items(generated_dir: Path) -> List[SCTItem]:
 
 
 def export_generated_items_to_csv(
-    generated_dir: Path, output_dir: Path, filename: str = None
+    validated_dir: Path, output_dir: Path, filename: str = None
 ) -> Path:
     """
-    Load all generated items and export them to a CSV file.
+    Load all validated items and export them to a CSV file.
 
     Args:
-        generated_dir: Path to directory with generated JSON files.
+        validated_dir: Path to directory with validated JSON files.
         output_dir: Path to directory where CSV should be saved.
         filename: Optional custom filename. If None, generates timestamped name.
 
     Returns:
         Path to the created CSV file.
     """
-    # Load all items
-    items = load_all_generated_items(generated_dir)
+    # Load all items from validated folder
+    items = load_all_generated_items(validated_dir)
 
     if not items:
         logger.warning("No items found to export")

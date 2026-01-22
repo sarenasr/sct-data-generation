@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clinical-guideline>
+  <metadata>
+    <title>ASCO Clinical Practice Guideline for Adjuvant Therapy for Resected Biliary Tract Cancer</title>
+    <source>American Society of Clinical Oncology (ASCO)</source>
+    <scope>Adjuvant therapy following surgical resection of biliary tract cancer</scope>
+    <disease>Biliary Tract Cancer (Intrahepatic Cholangiocarcinoma, Extrahepatic Cholangiocarcinoma, Gallbladder Cancer)</disease>
+    <target-population>Patients who have undergone resection of biliary tract cancer</target-population>
+  </metadata>
+
+  <clinical-questions>
+    <question number="1">Should patients who have undergone surgical resection for biliary tract cancer receive adjuvant chemotherapy?</question>
+    <question number="2">Should patients who have undergone surgical resection for biliary tract cancer receive adjuvant chemoradiotherapy?</question>
+  </clinical-questions>
+
+  <recommendations>
+    <recommendation number="1">
+      <statement>Patients who have undergone resection of biliary tract cancer should be offered adjuvant capecitabine chemotherapy for a duration of 6 months</statement>
+      <type>Evidence-based</type>
+      <evidence-quality>Intermediate</evidence-quality>
+      <strength>Strong</strength>
+      <supporting-evidence>
+        <trial name="BILCAP">
+          <design>Phase III randomised controlled trial</design>
+          <population>447 patients with resected biliary tract cancer</population>
+          <intervention>Capecitabine 1250 mg/m² twice daily, days 1-14, every 3 weeks for 8 cycles (6 months)</intervention>
+          <comparator>Observation</comparator>
+          <primary-endpoint>Overall survival</primary-endpoint>
+          <results>
+            <result type="ITT">
+              <median-os intervention="51.1 months" control="36.4 months"/>
+              <hazard-ratio>0.81</hazard-ratio>
+              <ci>0.63-1.04</ci>
+              <p-value>0.097</p-value>
+            </result>
+            <result type="Per-protocol">
+              <median-os intervention="52.7 months" control="36.1 months"/>
+              <hazard-ratio>0.75</hazard-ratio>
+              <ci>0.58-0.97</ci>
+              <p-value>0.028</p-value>
+            </result>
+            <result type="Sensitivity analysis (adjusted)">
+              <hazard-ratio>0.71</hazard-ratio>
+              <ci>0.55-0.92</ci>
+              <p-value>0.01</p-value>
+            </result>
+          </results>
+          <subgroup-analysis>
+            <subgroup>Benefit observed across all anatomic sites (iCCA, pCCA, dCCA, GBC)</subgroup>
+            <subgroup>Benefit observed regardless of nodal status</subgroup>
+            <subgroup>Benefit observed regardless of resection margin status</subgroup>
+          </subgroup-analysis>
+          <adverse-events>
+            <event grade="3-4">Hand-foot syndrome (24%)</event>
+            <event grade="3-4">Diarrhoea (5%)</event>
+            <event grade="3-4">Fatigue (5%)</event>
+          </adverse-events>
+        </trial>
+      </supporting-evidence>
+      <dosing>
+        <drug>Capecitabine</drug>
+        <dose>1250 mg/m² twice daily</dose>
+        <schedule>Days 1-14 of each 21-day cycle</schedule>
+        <duration>8 cycles (6 months)</duration>
+        <dose-modifications>
+          <modification trigger="Hand-foot syndrome grade 2">Hold until grade ≤1, then reduce by one dose level</modification>
+          <modification trigger="Renal impairment (CrCl 30-50 mL/min)">Reduce to 75% of starting dose</modification>
+        </dose-modifications>
+      </dosing>
+      <qualifying-statements>
+        <statement>This recommendation applies to all anatomic subsites of biliary tract cancer</statement>
+        <statement>Patients with R0 and R1 resections may benefit</statement>
+        <statement>Node-positive and node-negative patients may benefit</statement>
+        <statement>Adjuvant therapy should begin within 16 weeks of surgery</statement>
+      </qualifying-statements>
+    </recommendation>
+
+    <recommendation number="2">
+      <statement>Patients who have undergone resection of biliary tract cancer with positive surgical margins (R1 resection) may be offered adjuvant chemoradiotherapy with a fluoropyrimidine</statement>
+      <type>Informal consensus</type>
+      <evidence-quality>Low</evidence-quality>
+      <strength>Weak</strength>
+      <supporting-evidence>
+        <trial name="SWOG S0809">
+          <design>Phase II single-arm study</design>
+          <population>79 patients with extrahepatic cholangiocarcinoma or gallbladder cancer</population>
+          <intervention>
+            <phase name="Chemotherapy">Gemcitabine 1000 mg/m² days 1, 8 plus capecitabine 1500 mg/m²/day days 1-14, every 3 weeks for 4 cycles</phase>
+            <phase name="Chemoradiotherapy">Capecitabine 1330 mg/m²/day with concurrent radiotherapy (45 Gy in 25 fractions plus boost to 54-59.4 Gy)</phase>
+          </intervention>
+          <results>
+            <median-os>35 months</median-os>
+            <two-year-survival>65%</two-year-survival>
+            <two-year-local-recurrence-free-survival>59%</two-year-local-recurrence-free-survival>
+            <subgroup margin="R0">
+              <two-year-survival>67%</two-year-survival>
+            </subgroup>
+            <subgroup margin="R1">
+              <two-year-survival>60%</two-year-survival>
+            </subgroup>
+          </results>
+        </trial>
+      </supporting-evidence>
+      <radiotherapy-details>
+        <technique>Conformal radiotherapy or IMRT</technique>
+        <dose>45 Gy in 25 fractions to regional lymphatics</dose>
+        <boost>Additional boost to tumour bed (total 50.4-59.4 Gy)</boost>
+        <concurrent-chemotherapy>Capecitabine or infusional 5-FU</concurrent-chemotherapy>
+      </radiotherapy-details>
+      <qualifying-statements>
+        <statement>Limited prospective data available</statement>
+        <statement>Consider for R1 resections, particularly extrahepatic cholangiocarcinoma and gallbladder cancer</statement>
+        <statement>Role in intrahepatic cholangiocarcinoma less well defined</statement>
+        <statement>Multidisciplinary discussion recommended</statement>
+      </qualifying-statements>
+    </recommendation>
+  </recommendations>
+
+  <other-trials-reviewed>
+    <trial name="PRODIGE 12-ACCORD 18">
+      <design>Phase III randomised controlled trial</design>
+      <population>196 patients with resected biliary tract cancer</population>
+      <intervention>GEMOX (gemcitabine plus oxaliplatin)</intervention>
+      <comparator>Surveillance</comparator>
+      <results>
+        <relapse-free-survival>No significant difference</relapse-free-survival>
+        <overall-survival>No significant difference</overall-survival>
+      </results>
+      <conclusion>GEMOX not recommended as adjuvant therapy</conclusion>
+    </trial>
+    <trial name="Ebata et al">
+      <design>Phase III randomised controlled trial</design>
+      <population>225 patients with resected bile duct cancer</population>
+      <intervention>Gemcitabine monotherapy</intervention>
+      <comparator>Observation</comparator>
+      <results>
+        <overall-survival>No significant difference</overall-survival>
+      </results>
+      <conclusion>Gemcitabine monotherapy not superior to observation</conclusion>
+    </trial>
+    <trial name="JCOG1202 ASCOT">
+      <design>Phase III randomised controlled trial</design>
+      <population>440 patients with resected biliary tract cancer (Japan)</population>
+      <intervention>S-1 (oral fluoropyrimidine)</intervention>
+      <comparator>Observation</comparator>
+      <results>
+        <relapse-free-survival intervention="3-year 62.4%" control="50.9%">
+          <hazard-ratio>0.69</hazard-ratio>
+          <ci>0.52-0.92</ci>
+        </relapse-free-survival>
+        <overall-survival>Improved with S-1</overall-survival>
+      </results>
+      <conclusion>S-1 is an alternative adjuvant option, particularly in regions where available</conclusion>
+    </trial>
+  </other-trials-reviewed>
+
+  <special-considerations>
+    <consideration topic="Timing of adjuvant therapy">
+      <recommendation>Adjuvant therapy should begin within 16 weeks of surgery once patient has recovered adequately</recommendation>
+    </consideration>
+    <consideration topic="R1 resection">
+      <recommendation>Both adjuvant chemotherapy and chemoradiotherapy may be considered; multidisciplinary discussion recommended</recommendation>
+    </consideration>
+    <consideration topic="Node-positive disease">
+      <recommendation>Adjuvant chemotherapy recommended regardless of nodal status based on BILCAP subgroup analysis</recommendation>
+    </consideration>
+    <consideration topic="Elderly patients">
+      <recommendation>Age alone should not preclude adjuvant therapy; functional status should guide decision-making</recommendation>
+    </consideration>
+    <consideration topic="Molecular testing">
+      <recommendation>Comprehensive genomic profiling should be considered at diagnosis to identify targetable alterations for potential use at recurrence</recommendation>
+    </consideration>
+  </special-considerations>
+
+  <research-recommendations>
+    <recommendation>Further studies needed to evaluate combination adjuvant regimens</recommendation>
+    <recommendation>Investigation of adjuvant immunotherapy warranted</recommendation>
+    <recommendation>Biomarker studies to identify patients most likely to benefit from adjuvant therapy</recommendation>
+    <recommendation>Studies evaluating adjuvant targeted therapy for patients with actionable mutations</recommendation>
+  </research-recommendations>
+
+  <implementation-considerations>
+    <consideration>Patient preferences and values should be incorporated into decision-making</consideration>
+    <consideration>Side effect profile of capecitabine should be discussed</consideration>
+    <consideration>Hand-foot syndrome management strategies should be reviewed</consideration>
+    <consideration>Treatment access and cost considerations may be relevant</consideration>
+  </implementation-considerations>
+
+  <summary>
+    <key-point>Adjuvant capecitabine for 6 months is recommended for patients with resected biliary tract cancer</key-point>
+    <key-point>BILCAP trial demonstrated improved overall survival with capecitabine</key-point>
+    <key-point>Capecitabine dose: 1250 mg/m² twice daily, days 1-14, every 21 days for 8 cycles</key-point>
+    <key-point>Chemoradiotherapy may be considered for R1 resections</key-point>
+    <key-point>S-1 is an acceptable alternative where capecitabine is not available</key-point>
+    <key-point>GEMOX and gemcitabine monotherapy are not recommended as adjuvant therapy</key-point>
+  </summary>
+</clinical-guideline>

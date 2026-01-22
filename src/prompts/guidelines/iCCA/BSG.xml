@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clinical-guideline>
+  <metadata>
+    <title>BSG/AUGIS Guidelines for the Diagnosis and Management of Cholangiocarcinoma</title>
+    <source>British Society of Gastroenterology (BSG) and Association of Upper Gastrointestinal Surgeons (AUGIS)</source>
+    <scope>Diagnosis and management of cholangiocarcinoma</scope>
+    <disease>Cholangiocarcinoma (Intrahepatic, Perihilar, Distal)</disease>
+    <total-recommendations>50 recommendations</total-recommendations>
+  </metadata>
+
+  <classification>
+    <anatomical-classification>
+      <type name="Intrahepatic cholangiocarcinoma (iCCA)">
+        <definition>Arising from intrahepatic bile ducts, proximal to second-order bile ducts</definition>
+        <subtypes>
+          <subtype name="Mass-forming (MF)">Most common pattern</subtype>
+          <subtype name="Periductal-infiltrating (PI)">Growth along bile duct</subtype>
+          <subtype name="Intraductal growing (IG)">Papillary growth within duct</subtype>
+          <subtype name="Mixed patterns">MF+PI most common combination</subtype>
+        </subtypes>
+      </type>
+      <type name="Perihilar cholangiocarcinoma (pCCA)">
+        <definition>Arising between second-order bile ducts and insertion of cystic duct</definition>
+        <synonym>Klatskin tumour</synonym>
+        <frequency>50-60% of all CCAs</frequency>
+      </type>
+      <type name="Distal cholangiocarcinoma (dCCA)">
+        <definition>Arising below insertion of cystic duct</definition>
+        <frequency>20-30% of all CCAs</frequency>
+      </type>
+    </anatomical-classification>
+
+    <histological-classification>
+      <type name="Large duct type">
+        <features>Mucin-producing, perineural invasion common</features>
+        <molecular-profile>KRAS mutations (20%), SMAD4 (10-20%), TP53 (30%)</molecular-profile>
+        <prognosis>Generally worse prognosis</prognosis>
+      </type>
+      <type name="Small duct type">
+        <features>Less mucin, hepatocyte-like differentiation</features>
+        <molecular-profile>IDH1/2 mutations (20%), BAP1 (10-20%), FGFR2 fusions (15%)</molecular-profile>
+        <prognosis>May have better prognosis</prognosis>
+      </type>
+    </histological-classification>
+  </classification>
+
+  <pathology>
+    <immunohistochemistry>
+      <panel purpose="Confirm biliary differentiation">
+        <marker name="CK7">Positive in most CCAs</marker>
+        <marker name="CK19">Positive in most CCAs</marker>
+        <marker name="CK20">Usually negative</marker>
+      </panel>
+      <panel purpose="Distinguish large vs small duct">
+        <marker name="CRP">Positive in large duct type</marker>
+        <marker name="N-cadherin">Positive in small duct type</marker>
+        <marker name="S100P">Positive in large duct type</marker>
+      </panel>
+      <panel purpose="Exclude metastatic disease">
+        <marker name="CDX2">Colorectal primary</marker>
+        <marker name="TTF-1">Lung primary</marker>
+        <marker name="PAX8">Gynaecological/renal primary</marker>
+      </panel>
+    </immunohistochemistry>
+
+    <molecular-profiling>
+      <recommendation strength="strong">All patients with advanced/metastatic CCA should undergo comprehensive molecular profiling</recommendation>
+      <targetable-alterations>
+        <alteration gene="IDH1" frequency="1-18%" escat="IA">
+          <therapy>Ivosidenib</therapy>
+        </alteration>
+        <alteration gene="FGFR2" type="fusion/rearrangement" frequency="&lt;10%" escat="IIB">
+          <therapy>Pemigatinib, infigratinib, futibatinib</therapy>
+        </alteration>
+        <alteration gene="HER2" type="amplification/overexpression" frequency="5-10%" escat="IIIA">
+          <therapy>Trastuzumab-based therapy</therapy>
+        </alteration>
+        <alteration gene="BRAF" type="V600E" frequency="&lt;5%" escat="IIIA">
+          <therapy>Dabrafenib plus trametinib</therapy>
+        </alteration>
+        <alteration gene="BRCA1/2" frequency="3-5%">
+          <therapy>PARP inhibitors (investigational)</therapy>
+        </alteration>
+        <alteration gene="MSI-H/dMMR" frequency="&lt;1%">
+          <therapy>Pembrolizumab</therapy>
+        </alteration>
+        <alteration gene="NTRK" type="fusion" frequency="&lt;1%">
+          <therapy>Larotrectinib, entrectinib</therapy>
+        </alteration>
+      </targetable-alterations>
+    </molecular-profiling>
+  </pathology>
+
+  <clinical-presentation>
+    <symptoms>
+      <symptom>Painless jaundice (pCCA, dCCA)</symptom>
+      <symptom>Abdominal pain (iCCA)</symptom>
+      <symptom>Weight loss</symptom>
+      <symptom>Pruritus</symptom>
+      <symptom>Cholangitis (with obstruction)</symptom>
+      <symptom>Hepatomegaly</symptom>
+    </symptoms>
+    <laboratory-findings>
+      <finding>Elevated bilirubin</finding>
+      <finding>Elevated alkaline phosphatase</finding>
+      <finding>Elevated GGT</finding>
+      <finding>CA 19-9 elevated (may be normal in Lewis antigen negative patients)</finding>
+    </laboratory-findings>
+    <recommendation>All suspected cases should be discussed at hepatobiliary MDT</recommendation>
+  </clinical-presentation>
+
+  <differential-diagnosis>
+    <benign-mimics>
+      <condition name="PSC dominant stricture">
+        <distinguishing-features>History of PSC, multifocal strictures, typical cholangiographic appearance</distinguishing-features>
+      </condition>
+      <condition name="IgG4-related sclerosing cholangitis">
+        <distinguishing-features>Elevated IgG4, pancreatic involvement, response to steroids</distinguishing-features>
+      </condition>
+      <condition name="Mirizzi syndrome">
+        <distinguishing-features>Gallstone impaction causing extrinsic compression</distinguishing-features>
+      </condition>
+      <condition name="Post-surgical stricture">
+        <distinguishing-features>History of biliary surgery</distinguishing-features>
+      </condition>
+    </benign-mimics>
+  </differential-diagnosis>
+
+  <diagnosis>
+    <imaging>
+      <modality name="CT scan" phase="multiphasic">
+        <technique>Arterial and portal venous phase imaging</technique>
+        <utility>Initial assessment, staging, vascular involvement</utility>
+        <icca-features>
+          <feature>Peripheral rim enhancement</feature>
+          <feature>Progressive centripetal enhancement</feature>
+          <feature>Capsular retraction</feature>
+        </icca-features>
+        <pcca-features>
+          <feature>Biliary dilatation above stricture</feature>
+          <feature>Delayed enhancement at stricture</feature>
+        </pcca-features>
+      </modality>
+
+      <modality name="MRI/MRCP">
+        <recommendation strength="strong">MRI superior to CT for T-staging of iCCA</recommendation>
+        <utility>Bile duct anatomy, liver lesion characterisation, local staging</utility>
+        <technique>Hepatobiliary contrast agents (gadoxetic acid) may be helpful</technique>
+      </modality>
+
+      <modality name="FDG-PET/CT">
+        <indication>Detection of occult lymph node and distant metastases</indication>
+        <performance for-lymph-nodes="true">
+          <sensitivity>88.4%</sensitivity>
+          <specificity>69.1%</specificity>
+        </performance>
+        <performance for-distant-metastases="true">
+          <sensitivity>85.4%</sensitivity>
+          <specificity>89.7%</specificity>
+        </performance>
+        <limitation>May be falsely negative in mucinous or infiltrative tumours</limitation>
+        <limitation>Falsely positive in inflammation/infection</limitation>
+      </modality>
+
+      <li-rads>
+        <version>LI-RADS v2018</version>
+        <application>Characterisation of liver observations in at-risk patients</application>
+      </li-rads>
+    </imaging>
+
+    <endoscopy>
+      <ercp>
+        <role>Tissue diagnosis, biliary decompression</role>
+        <brush-cytology>
+          <sensitivity>45%</sensitivity>
+          <specificity>99%</specificity>
+        </brush-cytology>
+        <recommendation>Combine cytology with biopsies to improve yield</recommendation>
+      </ercp>
+
+      <cholangioscopy>
+        <sensitivity-visual>90%</sensitivity-visual>
+        <sensitivity-biopsy>60%</sensitivity-biopsy>
+        <indication>Indeterminate biliary strictures</indication>
+        <types>
+          <type>Single-operator (SpyGlass)</type>
+          <type>Direct peroral cholangioscopy</type>
+        </types>
+      </cholangioscopy>
+
+      <eus>
+        <indication>Lymph node sampling, distal bile duct assessment</indication>
+        <technique>EUS-FNA for lymph node staging</technique>
+      </eus>
+
+      <stent-management>
+        <preoperative>
+          <recommendation>Metal stents preferred for palliation</recommendation>
+          <recommendation>Plastic stents may be used preoperatively if surgery expected within 2-4 weeks</recommendation>
+        </preoperative>
+        <palliation>
+          <recommendation>Self-expanding metal stents (SEMS) for unresectable disease</recommendation>
+          <covered-vs-uncovered>Uncovered SEMS may have longer patency for malignant hilar strictures</covered-vs-uncovered>
+        </palliation>
+      </stent-management>
+    </endoscopy>
+  </diagnosis>
+
+  <staging>
+    <tnm-staging>
+      <system>AJCC 8th edition</system>
+      <separate-systems>
+        <category>iCCA</category>
+        <category>pCCA</category>
+        <category>dCCA</category>
+      </separate-systems>
+    </tnm-staging>
+
+    <bismuth-corlette-classification application="pCCA">
+      <type number="I">Tumour below confluence of left and right hepatic ducts</type>
+      <type number="II">Tumour reaching the confluence</type>
+      <type number="IIIa">Tumour extending into right hepatic duct</type>
+      <type number="IIIb">Tumour extending into left hepatic duct</type>
+      <type number="IV">Tumour involving both right and left hepatic ducts or multifocal</type>
+    </bismuth-corlette-classification>
+
+    <mskcc-staging application="pCCA">
+      <description>Memorial Sloan Kettering Cancer Center staging for resectability</description>
+      <criteria>
+        <criterion>Biliary extent (Bismuth type)</criterion>
+        <criterion>Vascular involvement (portal vein, hepatic artery)</criterion>
+        <criterion>Hepatic lobar atrophy</criterion>
+      </criteria>
+    </mskcc-staging>
+
+    <staging-laparoscopy>
+      <indication>Considered prior to planned resection, particularly for pCCA</indication>
+      <yield>May detect occult peritoneal or liver metastases in 20-40%</yield>
+    </staging-laparoscopy>
+  </staging>
+
+  <surgical-management>
+    <resectability-criteria>
+      <resectable>
+        <criterion>No distant metastases</criterion>
+        <criterion>Adequate future liver remnant</criterion>
+        <criterion>No bilateral or extensive hepatic duct involvement (for pCCA)</criterion>
+        <criterion>No encasement of main portal vein or proper hepatic artery</criterion>
+      </resectable>
+      <borderline-resectable>
+        <criterion>Unilateral portal vein involvement amenable to resection/reconstruction</criterion>
+        <criterion>Unilateral hepatic artery involvement in select cases</criterion>
+      </borderline-resectable>
+      <unresectable>
+        <criterion>Bilateral second-order bile duct involvement</criterion>
+        <criterion>Main portal vein encasement</criterion>
+        <criterion>Bilateral hepatic artery involvement</criterion>
+        <criterion>Distant metastases</criterion>
+        <criterion>Extensive lymph node metastases beyond regional nodes</criterion>
+      </unresectable>
+    </resectability-criteria>
+
+    <future-liver-remnant>
+      <minimum-volume>
+        <normal-liver>25-30%</normal-liver>
+        <compromised-liver>40%</compromised-liver>
+      </minimum-volume>
+      <augmentation-techniques>
+        <pve>
+          <name>Portal vein embolisation</name>
+          <indication>Insufficient FLR for planned resection</indication>
+          <expected-hypertrophy>30-40% increase over 4-6 weeks</expected-hypertrophy>
+          <recommendation strength="strong">Standard technique for FLR augmentation</recommendation>
+        </pve>
+        <alpps>
+          <name>Associating Liver Partition and Portal vein Ligation for Staged hepatectomy</name>
+          <mortality>48% for pCCA</mortality>
+          <recommendation strength="strong">NOT recommended for pCCA due to high mortality</recommendation>
+          <consideration>May be considered in highly selected iCCA cases</consideration>
+        </alpps>
+      </augmentation-techniques>
+    </future-liver-remnant>
+
+    <preoperative-biliary-drainage>
+      <indication>Bilirubin typically &gt;250 µmol/L</indication>
+      <indication>Planned major hepatectomy with compromised FLR</indication>
+      <indication>Cholangitis</indication>
+      <method>ERCP preferred; PTC if ERCP fails or for complex hilar strictures</method>
+    </preoperative-biliary-drainage>
+
+    <surgical-procedures>
+      <icca-surgery>
+        <procedure>Anatomic hepatectomy with adequate margins</procedure>
+        <margin-goal>R0 with &gt;1 cm margin if possible</margin-goal>
+        <lymphadenectomy>Regional lymphadenectomy recommended; minimum 6 nodes</lymphadenectomy>
+      </icca-surgery>
+
+      <pcca-surgery>
+        <procedure>En bloc hepatectomy with extrahepatic bile duct resection</procedure>
+        <extent>Usually extended hepatectomy (right or left)</extent>
+        <caudate-resection>Routinely performed due to direct biliary drainage</caudate-resection>
+        <portal-vein-resection>May be required for R0 resection</portal-vein-resection>
+        <hepatic-artery-resection>High-risk; considered in select centres</hepatic-artery-resection>
+      </pcca-surgery>
+
+      <dcca-surgery>
+        <procedure>Pancreaticoduodenectomy (Whipple procedure)</procedure>
+        <lymphadenectomy>Regional lymphadenectomy</lymphadenectomy>
+      </dcca-surgery>
+    </surgical-procedures>
+
+    <prognostic-factors>
+      <factors>
+        <factor impact="adverse">Positive margins (R1/R2)</factor>
+        <factor impact="adverse">Lymph node metastases</factor>
+        <factor impact="adverse">Vascular invasion</factor>
+        <factor impact="adverse">Perineural invasion</factor>
+        <factor impact="adverse">Multifocal disease</factor>
+        <factor impact="adverse">Poor differentiation</factor>
+      </factors>
+      <nomogram>
+        <description>Prognostic nomogram for survival prediction post-resection</description>
+        <variables>Age, tumour size, number of lesions, vascular invasion, lymph node status, margin status</variables>
+      </nomogram>
+    </prognostic-factors>
+  </surgical-management>
+
+  <liver-transplantation>
+    <for-pcca>
+      <protocol name="Mayo protocol">
+        <components>
+          <component>External beam radiotherapy (45 Gy) with concurrent 5-FU/capecitabine</component>
+          <component>Intraluminal brachytherapy boost</component>
+          <component>Maintenance capecitabine</component>
+          <component>Staging laparotomy before transplant</component>
+        </components>
+        <criteria>
+          <criterion>Unresectable pCCA or pCCA in PSC</criterion>
+          <criterion>Radial tumour diameter ≤3 cm</criterion>
+          <criterion>No intrahepatic or extrahepatic metastases</criterion>
+          <criterion>No transperitoneal biopsy</criterion>
+        </criteria>
+        <outcomes>
+          <five-year-survival>65-74%</five-year-survival>
+          <recurrence-rate>15-20%</recurrence-rate>
+        </outcomes>
+      </protocol>
+    </for-pcca>
+
+    <for-icca>
+      <eligibility>
+        <criterion>Single tumour ≤2 cm</criterion>
+        <criterion>Arising in setting of cirrhosis</criterion>
+        <criterion>Preferably under study protocols</criterion>
+      </eligibility>
+      <outcomes>
+        <five-year-survival>65% for tumours ≤2 cm</five-year-survival>
+      </outcomes>
+      <recommendation>Consider for very early iCCA in cirrhosis; preferably under protocols</recommendation>
+    </for-icca>
+  </liver-transplantation>
+
+  <systemic-therapy>
+    <first-line>
+      <standard-of-care>
+        <regimen>Gemcitabine plus cisplatin plus durvalumab</regimen>
+        <evidence trial="TOPAZ-1">
+          <median-os intervention="12.8 months" control="11.5 months"/>
+          <hazard-ratio>0.80</hazard-ratio>
+          <ci>0.66-0.97</ci>
+          <p-value>0.021</p-value>
+        </evidence>
+        <dosing>
+          <drug name="Gemcitabine">1000 mg/m² days 1, 8</drug>
+          <drug name="Cisplatin">25 mg/m² days 1, 8</drug>
+          <drug name="Durvalumab">1500 mg day 1</drug>
+          <cycle>Every 3 weeks for up to 8 cycles, then durvalumab maintenance</cycle>
+        </dosing>
+      </standard-of-care>
+
+      <alternative-if-durvalumab-unavailable>
+        <regimen>Gemcitabine plus cisplatin</regimen>
+        <evidence trial="ABC-02">
+          <median-os>11.7 months</median-os>
+        </evidence>
+      </alternative-if-durvalumab-unavailable>
+
+      <alternative-cisplatin-unfit>
+        <regimen>Gemcitabine plus S-1</regimen>
+        <regimen>Gemcitabine monotherapy</regimen>
+      </alternative-cisplatin-unfit>
+    </first-line>
+
+    <second-line>
+      <standard>
+        <regimen>FOLFOX (5-FU/leucovorin/oxaliplatin)</regimen>
+        <evidence trial="ABC-06">
+          <median-os>6.2 months vs 5.3 months (ASC)</median-os>
+          <hazard-ratio>0.69</hazard-ratio>
+          <ci>0.50-0.97</ci>
+        </evidence>
+      </standard>
+
+      <alternatives>
+        <regimen>FOLFIRI (if oxaliplatin contraindicated)</regimen>
+        <regimen>Liposomal irinotecan + 5-FU/LV</regimen>
+      </alternatives>
+
+      <targeted-therapies>
+        <therapy mutation="IDH1">
+          <drug>Ivosidenib</drug>
+          <evidence trial="ClarIDHy">Improved PFS vs placebo</evidence>
+        </therapy>
+        <therapy mutation="FGFR2 fusion/rearrangement">
+          <drug>Pemigatinib</drug>
+          <orr>36%</orr>
+          <median-pfs>6.9 months</median-pfs>
+        </therapy>
+        <therapy mutation="FGFR2 fusion/rearrangement">
+          <drug>Futibatinib</drug>
+          <orr>42%</orr>
+          <median-pfs>9 months</median-pfs>
+        </therapy>
+        <therapy mutation="MSI-H/dMMR">
+          <drug>Pembrolizumab</drug>
+        </therapy>
+        <therapy mutation="BRAF V600E">
+          <drug>Dabrafenib plus trametinib</drug>
+        </therapy>
+      </targeted-therapies>
+    </second-line>
+  </systemic-therapy>
+
+  <radiotherapy>
+    <neoadjuvant>
+      <indication>Neoadjuvant chemoradiation for pCCA prior to liver transplantation (Mayo protocol)</indication>
+    </neoadjuvant>
+
+    <adjuvant>
+      <indication>May be considered for R1 resection</indication>
+      <regimen>Concurrent fluoropyrimidine-based chemoradiation</regimen>
+      <evidence>Limited prospective data; extrapolated from SWOG S0809</evidence>
+    </adjuvant>
+
+    <definitive-sbrt>
+      <indication>Locally advanced unresectable disease</indication>
+      <dose>Typically 45-60 Gy in 3-5 fractions</dose>
+      <outcomes>May achieve local control; limited survival data</outcomes>
+    </definitive-sbrt>
+
+    <palliative>
+      <indication>Pain control, bleeding, obstruction</indication>
+    </palliative>
+
+    <proton-beam-therapy>
+      <status>Emerging modality</status>
+      <advantage>Potential for improved dose conformality and normal tissue sparing</advantage>
+    </proton-beam-therapy>
+  </radiotherapy>
+
+  <locoregional-therapy>
+    <tace>
+      <indication>Unresectable iCCA confined to liver</indication>
+      <types>
+        <type>Conventional TACE (cTACE)</type>
+        <type>Drug-eluting bead TACE (DEB-TACE)</type>
+      </types>
+    </tace>
+
+    <radioembolisation>
+      <indication>Unresectable iCCA confined to liver</indication>
+      <agent>Yttrium-90 microspheres</agent>
+      <evidence>May achieve disease control; limited comparative data</evidence>
+    </radioembolisation>
+
+    <ablation>
+      <indication>Small (&lt;3 cm) unresectable tumours</indication>
+      <techniques>
+        <technique>Radiofrequency ablation (RFA)</technique>
+        <technique>Microwave ablation (MWA)</technique>
+      </techniques>
+    </ablation>
+
+    <hai>
+      <name>Hepatic arterial infusion chemotherapy</name>
+      <indication>Unresectable liver-confined disease</indication>
+      <agent>Floxuridine (FUDR) or other agents</agent>
+    </hai>
+  </locoregional-therapy>
+
+  <palliative-care>
+    <biliary-obstruction>
+      <management>Endoscopic or percutaneous stenting</management>
+      <stent-type>Metal stents preferred for palliation</stent-type>
+    </biliary-obstruction>
+
+    <pruritus-management>
+      <first-line>Cholestyramine</first-line>
+      <second-line>Rifampicin (monitor LFTs)</second-line>
+      <third-line>Naltrexone</third-line>
+      <fourth-line>Sertraline</fourth-line>
+    </pruritus-management>
+
+    <pain-management>
+      <approach>WHO analgesic ladder</approach>
+      <intervention>Coeliac plexus block for refractory pain</intervention>
+    </pain-management>
+
+    <nutritional-support>
+      <consideration>Biliary obstruction affects fat absorption</consideration>
+      <intervention>Pancreatic enzyme supplementation may be needed</intervention>
+    </nutritional-support>
+
+    <patient-support>
+      <organisation name="AMMF (Alan Morement Memorial Fund)">Cholangiocarcinoma charity</organisation>
+      <organisation name="Macmillan Cancer Support">General cancer support</organisation>
+      <organisation name="PSC Support UK">For PSC patients</organisation>
+    </patient-support>
+  </palliative-care>
+
+  <recommendations-list>
+    <recommendation number="1" strength="strong" category="MDT">All patients with suspected CCA should be discussed at a specialist hepatobiliary MDT</recommendation>
+    <recommendation number="2" strength="strong" category="Diagnosis">Histological confirmation is required before treatment of presumed CCA</recommendation>
+    <recommendation number="3" strength="strong" category="Imaging">Multi-phase CT is recommended for initial staging</recommendation>
+    <recommendation number="4" strength="strong" category="Imaging">MRI is superior to CT for T-staging of iCCA</recommendation>
+    <recommendation number="5" strength="strong" category="Imaging">FDG-PET/CT should be considered for detection of occult metastases</recommendation>
+    <recommendation number="6" strength="strong" category="Endoscopy">ERCP with brush cytology and biopsies for biliary stricture evaluation</recommendation>
+    <recommendation number="7" strength="strong" category="Endoscopy">Cholangioscopy for indeterminate strictures</recommendation>
+    <recommendation number="8" strength="strong" category="Molecular">Comprehensive molecular profiling for advanced disease</recommendation>
+    <recommendation number="9" strength="strong" category="Surgery">R0 resection is the goal of surgical treatment</recommendation>
+    <recommendation number="10" strength="strong" category="Surgery">Regional lymphadenectomy (minimum 6 nodes) for iCCA</recommendation>
+    <recommendation number="11" strength="strong" category="Surgery">PVE for inadequate FLR</recommendation>
+    <recommendation number="12" strength="strong" category="Surgery">ALPPS not recommended for pCCA</recommendation>
+    <recommendation number="13" strength="strong" category="Transplant">LT under Mayo protocol for selected pCCA</recommendation>
+    <recommendation number="14" strength="weak" category="Transplant">LT may be considered for very early iCCA in cirrhosis</recommendation>
+    <recommendation number="15" strength="strong" category="Adjuvant">Capecitabine for 6 months following resection</recommendation>
+    <recommendation number="16" strength="strong" category="Systemic">GemCis plus durvalumab for advanced disease first-line</recommendation>
+    <recommendation number="17" strength="strong" category="Systemic">FOLFOX for second-line treatment</recommendation>
+    <recommendation number="18" strength="strong" category="Targeted">FGFR inhibitors for FGFR2 fusion-positive tumours</recommendation>
+    <recommendation number="19" strength="strong" category="Targeted">Ivosidenib for IDH1-mutant tumours</recommendation>
+    <recommendation number="20" strength="strong" category="Targeted">Pembrolizumab for MSI-H tumours</recommendation>
+  </recommendations-list>
+
+  <research-priorities>
+    <priority>Improve access to molecular profiling across all centres</priority>
+    <priority>Develop clinical trials for neoadjuvant therapy</priority>
+    <priority>Optimise radiotherapy protocols</priority>
+    <priority>Investigate role of immunotherapy combinations</priority>
+    <priority>Develop effective surveillance strategies for high-risk populations</priority>
+    <priority>Identify novel biomarkers for early detection</priority>
+  </research-priorities>
+</clinical-guideline>

@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clinical-guideline>
+  <metadata>
+    <title>EASL-ILCA Clinical Practice Guidelines on the Management of Intrahepatic Cholangiocarcinoma</title>
+    <source>European Association for the Study of the Liver (EASL) and International Liver Cancer Association (ILCA)</source>
+    <scope>Management of intrahepatic cholangiocarcinoma</scope>
+    <disease>Intrahepatic Cholangiocarcinoma (iCCA)</disease>
+    <methodology>PICO framework, Oxford Centre for Evidence-based Medicine levels of evidence, Delphi consensus</methodology>
+  </metadata>
+
+  <classification>
+    <who-classification>
+      <description>Intrahepatic cholangiocarcinoma is classified separately from perihilar and distal cholangiocarcinoma in ICD-11 and ICD-O-4</description>
+    </who-classification>
+
+    <morphological-classification>
+      <type name="Mass-forming (MF)">
+        <description>Well-defined mass, most common type</description>
+        <frequency>Most common pattern</frequency>
+      </type>
+      <type name="Periductal-infiltrating (PI)">
+        <description>Growth along bile duct wall causing stricture</description>
+      </type>
+      <type name="Intraductal growing (IG)">
+        <description>Papillary growth within bile duct lumen</description>
+        <prognosis>Generally better prognosis</prognosis>
+      </type>
+      <type name="Mixed patterns">
+        <description>MF+PI most common combination</description>
+      </type>
+    </morphological-classification>
+
+    <histological-subtypes>
+      <recommendation strength="weak" loe="4-5" consensus="88%">
+        Subclassification into large duct type and small duct type is suggested, as this may have clinical utility based on prognostic and therapeutic implications
+      </recommendation>
+
+      <subtype name="Large duct type">
+        <features>
+          <feature>Mucin-producing</feature>
+          <feature>Perineural invasion common</feature>
+          <feature>Arises from large intrahepatic bile ducts</feature>
+        </features>
+        <molecular-profile>
+          <alteration>KRAS mutations (20%)</alteration>
+          <alteration>SMAD4 alterations (10-20%)</alteration>
+          <alteration>TP53 mutations (30%)</alteration>
+        </molecular-profile>
+        <association>Often associated with PSC, hepatolithiasis</association>
+      </subtype>
+
+      <subtype name="Small duct type">
+        <features>
+          <feature>Less mucin production</feature>
+          <feature>Hepatocyte-like features may be present</feature>
+          <feature>Arises from small intrahepatic bile ducts or hepatic progenitor cells</feature>
+        </features>
+        <molecular-profile>
+          <alteration>IDH1/2 mutations (20%)</alteration>
+          <alteration>BAP1 alterations (10-20%)</alteration>
+          <alteration>FGFR2 fusions/rearrangements (15%)</alteration>
+        </molecular-profile>
+        <association>May arise in cirrhotic liver, often associated with chronic liver disease</association>
+      </subtype>
+
+      <recommendation strength="weak" loe="4" consensus="94%">
+        Macro classification is suggested in combination with pathological subclassification, as it is more reliable and reproducible
+      </recommendation>
+    </histological-subtypes>
+  </classification>
+
+  <risk-factors>
+    <risk-factor-table>
+      <factor name="Hepatolithiasis">
+        <odds-ratio>15</odds-ratio>
+        <notes>More common in East Asia</notes>
+      </factor>
+      <factor name="Biliary cysts">
+        <odds-ratio>14</odds-ratio>
+      </factor>
+      <factor name="Choledochal cysts">
+        <odds-ratio>26</odds-ratio>
+      </factor>
+      <factor name="Cholecystolithiasis">
+        <odds-ratio>1.75</odds-ratio>
+      </factor>
+      <factor name="Caroli disease">
+        <odds-ratio>38</odds-ratio>
+      </factor>
+      <factor name="Primary sclerosing cholangitis (PSC)">
+        <odds-ratio>22</odds-ratio>
+        <notes>Leading risk factor in Western countries</notes>
+      </factor>
+      <factor name="Cirrhosis">
+        <odds-ratio>15.32</odds-ratio>
+      </factor>
+      <factor name="Chronic HBV infection">
+        <odds-ratio>4.57</odds-ratio>
+      </factor>
+      <factor name="Chronic HCV infection">
+        <odds-ratio>4.28</odds-ratio>
+      </factor>
+      <factor name="NAFLD/NASH">
+        <odds-ratio>2.2</odds-ratio>
+        <notes>Emerging risk factor in Western countries</notes>
+      </factor>
+      <factor name="Liver flukes (Opisthorchis viverrini, Clonorchis sinensis)">
+        <odds-ratio>5</odds-ratio>
+        <notes>Endemic in Southeast Asia</notes>
+      </factor>
+      <factor name="Alcohol">
+        <odds-ratio>3.15</odds-ratio>
+      </factor>
+      <factor name="Thorotrast exposure">
+        <relative-risk>&gt;300</relative-risk>
+        <notes>Historical radiocontrast agent</notes>
+      </factor>
+      <factor name="1,2-dichloropropane">
+        <relative-risk>15</relative-risk>
+        <notes>Occupational exposure (printing industry)</notes>
+      </factor>
+    </risk-factor-table>
+    <note>Risk factors identified in only ~30% of patients; most cases are sporadic</note>
+  </risk-factors>
+
+  <surveillance>
+    <psc-patients>
+      <recommendation strength="weak" loe="4" consensus="97%">
+        Annual surveillance with non-invasive radiologic tools is suggested for patients with PSC
+      </recommendation>
+      <recommendation strength="weak" loe="4" consensus="93%">
+        For surveillance of CCA in patients with PSC, MRI+MRCP is suggested as it has the highest diagnostic accuracy
+      </recommendation>
+      <imaging-performance>
+        <mri-mrcp>
+          <sensitivity>98.9%</sensitivity>
+          <specificity>99.9%</specificity>
+        </mri-mrcp>
+      </imaging-performance>
+      <tumor-markers>CA 19-9 as adjunct (limited sensitivity in early disease)</tumor-markers>
+    </psc-patients>
+
+    <cirrhosis-patients>
+      <recommendation strength="weak" loe="4" consensus="87%">
+        Ultrasound at 6-monthly intervals is suggested for patients with cirrhosis, as it may be effective for detection of iCCA at an early stage
+      </recommendation>
+      <note>iCCA surveillance can be incorporated into HCC surveillance program</note>
+    </cirrhosis-patients>
+
+    <liver-fluke-endemic>
+      <recommendation strength="strong" loe="2" consensus="100%">
+        In patients infected with liver flukes, abdominal ultrasound surveillance at 6-monthly intervals is recommended
+      </recommendation>
+      <program name="CASCAP">Cholangiocarcinoma Screening and Care Program in Thailand</program>
+    </liver-fluke-endemic>
+  </surveillance>
+
+  <prevention>
+    <liver-fluke-prevention>
+      <recommendation strength="weak" loe="4" consensus="96%">
+        Educational campaigns may be considered as useful tools in changing behaviour to prevent liver fluke infection and re-infection
+      </recommendation>
+      <program name="Lawa model">Integrated health education approach in Thailand</program>
+      <strategies>
+        <strategy>Avoid consumption of raw or undercooked freshwater fish</strategy>
+        <strategy>Improved sanitation</strategy>
+        <strategy>Treatment of infected individuals with praziquantel</strategy>
+        <strategy>Community health education programs</strategy>
+      </strategies>
+    </liver-fluke-prevention>
+
+    <hepatolithiasis-management>
+      <recommendation strength="none" loe="4" consensus="100%">
+        Given conflicting results and low quality of published studies, it is not possible to give a recommendation on hepatic resection as a strategy to prevent iCCA in patients with hepatolithiasis
+      </recommendation>
+    </hepatolithiasis-management>
+  </prevention>
+
+  <diagnosis>
+    <biopsy>
+      <recommendation strength="strong" loe="4" consensus="96%">
+        Tumour biopsy is recommended to obtain a definitive diagnosis. Despite the low quality of evidence, this recommendation was proposed as strong as a definitive diagnosis has critical clinical relevance
+      </recommendation>
+      <rationale>Required for histological confirmation and molecular profiling</rationale>
+    </biopsy>
+
+    <immunohistochemistry>
+      <recommendation strength="weak" loe="4" consensus="96%">
+        Immunohistochemistry can be useful to confirm/diagnose iCCA and its subtypes in order to distinguish it from metastatic liver tumours
+      </recommendation>
+      <markers>
+        <panel purpose="Biliary differentiation">
+          <marker>CK7 (positive)</marker>
+          <marker>CK19 (positive)</marker>
+          <marker>CK20 (usually negative)</marker>
+        </panel>
+        <panel purpose="Subtype differentiation">
+          <marker>CRP (large duct type)</marker>
+          <marker>N-cadherin (small duct type)</marker>
+          <marker>S100P (large duct type)</marker>
+        </panel>
+        <panel purpose="Exclude metastases">
+          <marker>CDX2 (colorectal)</marker>
+          <marker>TTF-1 (lung)</marker>
+          <marker>PAX8 (gynaecological/renal)</marker>
+        </panel>
+      </markers>
+    </immunohistochemistry>
+
+    <molecular-profiling>
+      <recommendation strength="weak" loe="5" consensus="86%">
+        In patients who are at high risk for recurrence (node or margin positive, vascular invasion, or multifocal intrahepatic disease), molecular profiling with a comprehensive panel is suggested at the time of diagnosis
+      </recommendation>
+      <escat-classification>
+        <tier name="I-A" gene="IDH1" frequency="10-20%">
+          <therapy>Ivosidenib</therapy>
+          <evidence>ClarIDHy trial</evidence>
+        </tier>
+        <tier name="II-B" gene="FGFR2 fusion/rearrangement" frequency="10-15%">
+          <therapy>Pemigatinib, infigratinib, futibatinib</therapy>
+        </tier>
+        <tier name="II" gene="BRAF V600E" frequency="3-5%">
+          <therapy>Dabrafenib plus trametinib</therapy>
+        </tier>
+        <tier name="III" gene="HER2 amplification" frequency="5-10%">
+          <therapy>Trastuzumab-based therapy</therapy>
+        </tier>
+        <tier name="I-A" gene="MSI-H/dMMR" frequency="1-2%">
+          <therapy>Pembrolizumab</therapy>
+        </tier>
+        <tier name="I-A" gene="NTRK fusion" frequency="&lt;1%">
+          <therapy>Larotrectinib, entrectinib</therapy>
+        </tier>
+      </escat-classification>
+      <recommendation>NGS-based comprehensive genomic profiling recommended for advanced disease</recommendation>
+    </molecular-profiling>
+  </diagnosis>
+
+  <staging>
+    <imaging-for-staging>
+      <recommendation strength="strong" loe="2" consensus="89%">
+        MRI should be considered instead of CT scanning for staging iCCA within the liver
+      </recommendation>
+
+      <recommendation strength="strong" loe="2" consensus="78%">
+        Given the strong role of PET scanning in identifying lymph node metastasis, patients with apparent resectable iCCA should routinely undergo FDG-PET scanning to identify lymph node metastases not apparent on standard CT or MRI during staging evaluation
+      </recommendation>
+
+      <recommendation strength="strong" loe="2-extrapolated" consensus="80%">
+        Patients with apparent resectable iCCA should undergo lymph node sampling by EUS with fine needle aspiration to identify lymph node metastases during staging evaluation, if a positive result would alter management
+      </recommendation>
+    </imaging-for-staging>
+
+    <tnm-staging>
+      <system>AJCC 8th edition</system>
+      <t-stage>
+        <T1a>Solitary tumour ≤5 cm without vascular invasion</T1a>
+        <T1b>Solitary tumour &gt;5 cm without vascular invasion</T1b>
+        <T2>Solitary tumour with intrahepatic vascular invasion or multiple tumours with or without vascular invasion</T2>
+        <T3>Tumour perforating visceral peritoneum</T3>
+        <T4>Tumour involving local extrahepatic structures by direct invasion</T4>
+      </t-stage>
+      <n-stage>
+        <N0>No regional lymph node metastasis</N0>
+        <N1>Regional lymph node metastasis</N1>
+      </n-stage>
+      <m-stage>
+        <M0>No distant metastasis</M0>
+        <M1>Distant metastasis</M1>
+      </m-stage>
+    </tnm-staging>
+  </staging>
+
+  <treatment-algorithm>
+    <resectable-disease>
+      <pathway>Surgery → Adjuvant capecitabine (6 months)</pathway>
+    </resectable-disease>
+    <unresectable-disease>
+      <first-line>GemCis + durvalumab</first-line>
+      <second-line>FOLFOX or targeted therapy based on molecular profile</second-line>
+    </unresectable-disease>
+  </treatment-algorithm>
+
+  <surgical-treatment>
+    <resection>
+      <goal>R0 resection with negative margins</goal>
+
+      <recommendation strength="weak" loe="4" consensus="88%">
+        Resection of iCCA may be considered in selected patients with multifocal, unilobar CCA
+      </recommendation>
+
+      <recommendation strength="none" loe="4" consensus="88%">
+        There is insufficient evidence supporting a recommendation for consideration of resection rather than locoregional and/or systemic treatments in patients with iCCA and macroscopic vascular involvement of the IVC, hepatic vein or portal vein
+      </recommendation>
+
+      <procedures>
+        <procedure>Anatomic hepatectomy preferred over non-anatomic resection</procedure>
+        <margin>R0 with ≥1 cm margin if achievable</margin>
+      </procedures>
+
+      <lymphadenectomy>
+        <recommendation>Regional lymphadenectomy recommended</recommendation>
+        <minimum-nodes>6 lymph nodes for adequate staging</minimum-nodes>
+      </lymphadenectomy>
+
+      <flr-augmentation>
+        <pve>
+          <indication>Insufficient FLR for planned resection</indication>
+          <hypertrophy>30-40% volume increase over 4-6 weeks</hypertrophy>
+        </pve>
+        <alpps>
+          <mortality>40-44%</mortality>
+          <recommendation>Not recommended for iCCA due to high morbidity/mortality</recommendation>
+        </alpps>
+      </flr-augmentation>
+
+      <minimally-invasive>
+        <description>Laparoscopic and robotic approaches emerging</description>
+        <consideration>May be considered in experienced centres for selected patients</consideration>
+      </minimally-invasive>
+    </resection>
+
+    <neoadjuvant-therapy>
+      <recommendation strength="weak" loe="4" consensus="92%">
+        Neoadjuvant systemic chemotherapy can be considered in patients with technically challenging but resectable disease, if an R1 resection is likely to be achievable
+      </recommendation>
+    </neoadjuvant-therapy>
+
+    <adjuvant-therapy>
+      <recommendation strength="strong" loe="2" consensus="96%">
+        A 6-month course of oral fluoropyrimidine (capecitabine or S1) should be considered following potentially curative resection of iCCA
+      </recommendation>
+      <evidence>
+        <trial name="BILCAP">
+          <intervention>Capecitabine 1250 mg/m² twice daily, days 1-14, q3w × 8 cycles</intervention>
+          <result>Improved median OS (51.1 vs 36.4 months, HR 0.81)</result>
+        </trial>
+        <trial name="JCOG1202 ASCOT">
+          <intervention>S-1</intervention>
+          <result>Improved relapse-free survival</result>
+        </trial>
+      </evidence>
+    </adjuvant-therapy>
+  </surgical-treatment>
+
+  <liver-transplantation>
+    <early-icca-in-cirrhosis>
+      <recommendation strength="weak" loe="4" consensus="93%">
+        Liver transplantation for early stage iCCA (≤3 cm) arising in the setting of cirrhosis can be considered, preferably under study protocols
+      </recommendation>
+      <criteria>
+        <criterion>Single tumour ≤3 cm (preferably ≤2 cm)</criterion>
+        <criterion>Arising in cirrhotic liver</criterion>
+        <criterion>No extrahepatic disease</criterion>
+        <criterion>No macrovascular invasion</criterion>
+      </criteria>
+      <outcomes>
+        <five-year-survival>65% for tumours ≤2 cm</five-year-survival>
+      </outcomes>
+    </early-icca-in-cirrhosis>
+
+    <locally-advanced>
+      <recommendation strength="weak" loe="4" consensus="81%">
+        Liver transplantation for locally advanced iCCA should not be performed outside of clinical trials
+      </recommendation>
+    </locally-advanced>
+  </liver-transplantation>
+
+  <systemic-therapy>
+    <unresectable-first-line>
+      <recommendation strength="strong" loe="1" consensus="100%">
+        Patients with unresectable iCCA and good performance status should be treated with GemCis (as first-line chemotherapy), with the addition of durvalumab where available
+      </recommendation>
+      <regimen>
+        <drug name="Gemcitabine">1000 mg/m² days 1, 8</drug>
+        <drug name="Cisplatin">25 mg/m² days 1, 8</drug>
+        <drug name="Durvalumab">1500 mg day 1</drug>
+        <cycle>Every 3 weeks for 8 cycles, then durvalumab maintenance</cycle>
+      </regimen>
+      <evidence trial="TOPAZ-1">
+        <median-os intervention="12.8 months" control="11.5 months"/>
+        <hazard-ratio>0.80</hazard-ratio>
+        <24-month-os>24.9% vs 10.4%</24-month-os>
+      </evidence>
+
+      <recommendation strength="weak" loe="2" consensus="95%">
+        In patients with iCCA and impaired performance status, gemcitabine monotherapy or plus S-1 combination therapy may provide comparable efficacy with fewer adverse events
+      </recommendation>
+    </unresectable-first-line>
+
+    <second-line>
+      <recommendation strength="strong" loe="2" consensus="93%">
+        Patients with iCCA with good performance status who progressed on first-line therapy should be treated with: FOLFOX chemotherapy or ivosidenib for those with IDH1 mutations, FGFR inhibitors for those with FGFR2 fusions or rearrangements, and immune checkpoint blockade for those with dMMR/MSI-H who have not received durvalumab in first-line
+      </recommendation>
+
+      <folfox>
+        <evidence trial="ABC-06">
+          <median-os>6.2 months vs 5.3 months (ASC)</median-os>
+          <hazard-ratio>0.69</hazard-ratio>
+        </evidence>
+      </folfox>
+
+      <fgfr-inhibitors>
+        <indication>FGFR2 fusions or rearrangements (10-15% of iCCA)</indication>
+        <drugs>
+          <drug name="Pemigatinib">
+            <orr>36%</orr>
+            <median-pfs>6.9 months</median-pfs>
+          </drug>
+          <drug name="Infigratinib">
+            <orr>23%</orr>
+          </drug>
+          <drug name="Futibatinib">
+            <orr>42%</orr>
+            <median-pfs>9 months</median-pfs>
+          </drug>
+        </drugs>
+        <adverse-events>Hyperphosphatemia (55-76%), most common</adverse-events>
+        <recommendation strength="strong" loe="2" consensus="100%">
+          FGFR inhibitors should be recommended for patients with iCCA and FGFR2 fusions or other rearrangements after progression on standard first-line chemotherapy
+        </recommendation>
+      </fgfr-inhibitors>
+
+      <idh1-inhibitor>
+        <drug name="Ivosidenib">
+          <indication>IDH1 mutations (10-20% of iCCA)</indication>
+          <evidence trial="ClarIDHy">Improved PFS vs placebo (2.7 vs 1.4 months, HR 0.37)</evidence>
+        </drug>
+      </idh1-inhibitor>
+
+      <immunotherapy>
+        <recommendation strength="strong" loe="4" consensus="97%">
+          Immune checkpoint blockade in patients with iCCA and dMMR/MSI-H who have progressed on first-line chemotherapy should be considered a therapeutic option
+        </recommendation>
+        <drug>Pembrolizumab</drug>
+        <indication>MSI-H/dMMR tumours (&lt;2% of iCCA)</indication>
+      </immunotherapy>
+    </second-line>
+  </systemic-therapy>
+
+  <locoregional-therapy>
+    <transarterial-procedures>
+      <recommendation strength="weak" loe="4" consensus="89%">
+        Transarterial procedures (SIRT, chemoembolisation and intra-arterial chemotherapy) are feasible and safe, and may be a reasonable alternative in selected patients with unresectable disease
+      </recommendation>
+      <modalities>
+        <modality name="TACE">Conventional or drug-eluting bead</modality>
+        <modality name="SIRT/Y90">Yttrium-90 radioembolisation</modality>
+        <modality name="HAI">Hepatic arterial infusion chemotherapy</modality>
+      </modalities>
+    </transarterial-procedures>
+
+    <ablation>
+      <recommendation strength="weak" loe="4" consensus="79%">
+        In unresectable or inoperable patients with a single &lt;2 cm iCCA, thermal ablation can be considered as a good alternative, as it is feasible and safe
+      </recommendation>
+      <techniques>
+        <technique>Radiofrequency ablation (RFA)</technique>
+        <technique>Microwave ablation (MWA)</technique>
+      </techniques>
+    </ablation>
+
+    <radiotherapy>
+      <recommendation strength="none" loe="4" consensus="87%">
+        Due to insufficient evidence, we cannot recommend in favour or against external beam ablative dose radiation therapy as an alternative to systemic therapy in unresectable liver-limited iCCA
+      </recommendation>
+      <options>
+        <option>Stereotactic body radiotherapy (SBRT)</option>
+        <option>Proton beam therapy (emerging)</option>
+      </options>
+    </radiotherapy>
+  </locoregional-therapy>
+
+  <recurrence-assessment>
+    <recommendation strength="weak" loe="4" consensus="85%">
+      The choice of the right liver imaging method to assess recurrence after surgery or interventional procedures with curative intent should consider technical issues related to different treatments. However, any imaging evaluation of the liver should always be complemented by a CT scan of the thorax, abdomen and pelvis since recurrence may occur inside or outside the liver
+    </recommendation>
+    <imaging-options>
+      <option>MRI for liver assessment (especially post-TACE, SIRT)</option>
+      <option>CT chest/abdomen/pelvis for extrahepatic disease</option>
+      <option>PET-CT may be useful for detecting recurrence</option>
+    </imaging-options>
+  </recurrence-assessment>
+
+  <future-directions>
+    <priority name="Prevention">
+      <description>Improved prevention strategies in liver fluke endemic areas</description>
+      <description>Addressing metabolic syndrome as emerging risk factor</description>
+    </priority>
+    <priority name="Early detection">
+      <description>Development of circulating biomarkers (ctDNA, miRNA, proteins)</description>
+      <description>Improved surveillance protocols for high-risk populations</description>
+    </priority>
+    <priority name="Molecular medicine">
+      <description>Up to 40% of iCCAs have targetable molecular alterations</description>
+      <description>New pathways being investigated for combination therapies</description>
+      <description>Precision medicine approach based on genomic, histologic, and clinical data</description>
+    </priority>
+    <priority name="Collaborative research">
+      <description>International multicentre projects to overcome small case numbers</description>
+      <description>Molecular and histological registries</description>
+      <description>Translation from animal models to clinical practice</description>
+    </priority>
+  </future-directions>
+
+  <abbreviations>
+    <abbreviation term="5-FU">Fluorouracil</abbreviation>
+    <abbreviation term="AJCC">American Joint Committee on Cancer</abbreviation>
+    <abbreviation term="ALPPS">Associating liver partition and portal vein ligation for staged hepatectomy</abbreviation>
+    <abbreviation term="CCA">Cholangiocarcinoma</abbreviation>
+    <abbreviation term="dMMR">Mismatch repair deficiency</abbreviation>
+    <abbreviation term="EASL">European Association for the Study of the Liver</abbreviation>
+    <abbreviation term="ESCAT">ESMO Scale for Clinical Actionability of molecular targets</abbreviation>
+    <abbreviation term="EUS">Endoscopic ultrasound</abbreviation>
+    <abbreviation term="FDG">Fluorodeoxyglucose</abbreviation>
+    <abbreviation term="FGFR">Fibroblast growth factor receptor</abbreviation>
+    <abbreviation term="FOLFOX">Oxaliplatin/fluorouracil</abbreviation>
+    <abbreviation term="GemCis">Gemcitabine plus cisplatin</abbreviation>
+    <abbreviation term="HAI">Hepatic arterial infusion</abbreviation>
+    <abbreviation term="iCCA">Intrahepatic cholangiocarcinoma</abbreviation>
+    <abbreviation term="IDH">Isocitrate dehydrogenase</abbreviation>
+    <abbreviation term="ILCA">International Liver Cancer Association</abbreviation>
+    <abbreviation term="LoE">Level of evidence</abbreviation>
+    <abbreviation term="MRCP">Magnetic resonance cholangiopancreatography</abbreviation>
+    <abbreviation term="MSI-H">Microsatellite instability-high</abbreviation>
+    <abbreviation term="NGS">Next-generation DNA sequencing</abbreviation>
+    <abbreviation term="ORR">Objective response rate</abbreviation>
+    <abbreviation term="OS">Overall survival</abbreviation>
+    <abbreviation term="pCCA">Perihilar cholangiocarcinoma</abbreviation>
+    <abbreviation term="PET">Positron emission tomography</abbreviation>
+    <abbreviation term="PFS">Progression-free survival</abbreviation>
+    <abbreviation term="PSC">Primary sclerosing cholangitis</abbreviation>
+    <abbreviation term="PVE">Portal vein embolisation</abbreviation>
+    <abbreviation term="SIRT">Selective internal radiation therapy</abbreviation>
+  </abbreviations>
+
+  <delphi-consensus-summary>
+    <total-recommendations>28 recommendations achieved consensus</total-recommendations>
+    <consensus-threshold>≥75% agreement</consensus-threshold>
+    <highest-consensus items="3">100% agreement</highest-consensus>
+    <lowest-consensus>78% (FDG-PET for lymph node staging)</lowest-consensus>
+  </delphi-consensus-summary>
+</clinical-guideline>

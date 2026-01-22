@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clinical-guideline>
+  <metadata>
+    <title>AASLD Practice Guidance on Primary Sclerosing Cholangitis and Cholangiocarcinoma</title>
+    <source>American Association for the Study of Liver Diseases (AASLD)</source>
+    <scope>Diagnosis, management, and surveillance of primary sclerosing cholangitis and cholangiocarcinoma</scope>
+    <disease>Primary Sclerosing Cholangitis (PSC), Cholangiocarcinoma (CCA)</disease>
+  </metadata>
+
+  <primary-sclerosing-cholangitis>
+    <definition>
+      <description>Chronic cholestatic liver disease characterized by inflammation, fibrosis, and stricturing of intrahepatic and/or extrahepatic bile ducts</description>
+      <variants>
+        <variant name="Large duct PSC">Classic form with strictures visible on cholangiography</variant>
+        <variant name="Small duct PSC">Histologic features without cholangiographic abnormalities</variant>
+        <variant name="PSC-AIH overlap">Features of both PSC and autoimmune hepatitis</variant>
+        <variant name="IgG4-related sclerosing cholangitis">Important differential diagnosis; responds to corticosteroids</variant>
+      </variants>
+    </definition>
+
+    <epidemiology>
+      <prevalence>1-16 per 100,000</prevalence>
+      <age-at-diagnosis>Mean 30-40 years</age-at-diagnosis>
+      <male-female-ratio>2:1</male-female-ratio>
+      <ibd-association>60-80% have concurrent inflammatory bowel disease (usually ulcerative colitis)</ibd-association>
+    </epidemiology>
+
+    <diagnosis>
+      <laboratory>
+        <finding>Elevated alkaline phosphatase (typically 2-3x ULN)</finding>
+        <finding>Elevated GGT</finding>
+        <finding>Aminotransferases mildly elevated</finding>
+        <finding>Elevated bilirubin (late finding or suggests dominant stricture)</finding>
+        <finding>p-ANCA positive in 30-80%</finding>
+        <finding>ANA and SMA may be positive</finding>
+        <finding>IgG4 levels (to exclude IgG4-related disease)</finding>
+      </laboratory>
+
+      <imaging>
+        <modality name="MRCP" preferred="true">
+          <sensitivity>86%</sensitivity>
+          <specificity>94%</specificity>
+          <findings>
+            <finding>Multifocal strictures with intervening dilations (beaded appearance)</finding>
+            <finding>Pruning of peripheral ducts</finding>
+            <finding>Diverticulum-like outpouchings</finding>
+          </findings>
+        </modality>
+        <modality name="ERCP">
+          <indication>Therapeutic intervention for dominant strictures</indication>
+          <indication>Tissue sampling when CCA suspected</indication>
+          <risk>Cholangitis, pancreatitis</risk>
+        </modality>
+      </imaging>
+
+      <histology>
+        <indication>Not required for diagnosis in typical cases</indication>
+        <indication>Helpful when small duct PSC suspected</indication>
+        <indication>Evaluation of PSC-AIH overlap</indication>
+        <classic-finding>Onion-skin periductal fibrosis (seen in minority)</classic-finding>
+      </histology>
+
+      <guidance-statements>
+        <statement number="1">PSC should be suspected in patients with cholestatic liver biochemistries, particularly those with IBD</statement>
+        <statement number="2">MRCP is the preferred initial imaging modality for diagnosis</statement>
+        <statement number="3">IgG4 levels should be checked to exclude IgG4-related sclerosing cholangitis</statement>
+        <statement number="4">Liver biopsy is not required for diagnosis in classic large duct PSC</statement>
+      </guidance-statements>
+    </diagnosis>
+
+    <liver-fibrosis-assessment>
+      <transient-elastography>
+        <cutoff stage="F3 (advanced fibrosis)">9.6 kPa</cutoff>
+        <cutoff stage="F4 (cirrhosis)">14.4 kPa</cutoff>
+        <note>Cholestasis may falsely elevate values</note>
+      </transient-elastography>
+      <mre>
+        <cutoff stage="Cirrhosis">4.6 kPa</cutoff>
+        <advantage>Less affected by inflammation than TE</advantage>
+      </mre>
+      <elf-test>
+        <description>Enhanced Liver Fibrosis test (serum biomarker)</description>
+        <utility>Prognostic value for disease progression</utility>
+      </elf-test>
+    </liver-fibrosis-assessment>
+
+    <prognostic-models>
+      <model name="Amsterdam-Oxford">
+        <variables>Age, bilirubin, albumin, platelets, AST, years since diagnosis</variables>
+      </model>
+      <model name="UK-PSC Risk Score">
+        <variables>Age, bilirubin, albumin, platelets, alkaline phosphatase</variables>
+      </model>
+      <model name="PREsTO">
+        <variables>Predicts hepatic decompensation</variables>
+      </model>
+      <model name="SCOPE">
+        <variables>Stratifies risk of disease progression</variables>
+      </model>
+    </prognostic-models>
+
+    <treatment>
+      <medical-therapy>
+        <drug name="Ursodeoxycholic acid (UDCA)">
+          <dose>13-23 mg/kg/day</dose>
+          <evidence>Improves biochemistry; no proven survival benefit in randomised trials</evidence>
+          <caution>High doses (28-30 mg/kg/day) associated with worse outcomes</caution>
+        </drug>
+        <guidance-statement>UDCA at moderate doses may be considered but is not routinely recommended</guidance-statement>
+      </medical-therapy>
+
+      <dominant-stricture-management>
+        <definition>Stricture &gt;1.5 mm in common bile duct or &gt;1 mm in hepatic duct</definition>
+        <approach>
+          <step>ERCP with balloon dilation</step>
+          <step>Cytology and/or biopsies to exclude CCA</step>
+          <step>Short-term stent placement if needed</step>
+        </approach>
+        <guidance-statement>Dominant strictures should be sampled to exclude CCA</guidance-statement>
+      </dominant-stricture-management>
+
+      <liver-transplantation>
+        <indications>
+          <indication>Decompensated cirrhosis</indication>
+          <indication>Recurrent cholangitis</indication>
+          <indication>Intractable pruritus</indication>
+          <indication>Hilar cholangiocarcinoma (under strict protocols)</indication>
+        </indications>
+        <outcomes>
+          <five-year-survival>80-85%</five-year-survival>
+          <recurrence-rate>20-25% recur post-transplant</recurrence-rate>
+        </outcomes>
+      </liver-transplantation>
+    </treatment>
+
+    <associated-conditions>
+      <condition name="Inflammatory bowel disease">
+        <recommendation>All PSC patients should undergo colonoscopy at diagnosis</recommendation>
+        <surveillance>Annual colonoscopy with biopsies for colorectal cancer surveillance</surveillance>
+      </condition>
+      <condition name="Gallbladder disease">
+        <polyp-management>
+          <recommendation size="any">Cholecystectomy for any gallbladder mass or polyp in PSC</recommendation>
+          <rationale>High risk of malignancy in PSC patients</rationale>
+        </polyp-management>
+      </condition>
+      <condition name="Osteoporosis">
+        <recommendation>Bone density assessment recommended</recommendation>
+      </condition>
+      <condition name="Fat-soluble vitamin deficiency">
+        <recommendation>Monitor and supplement vitamins A, D, E, K as needed</recommendation>
+      </condition>
+    </associated-conditions>
+  </primary-sclerosing-cholangitis>
+
+  <cholangiocarcinoma>
+    <risk-in-psc>
+      <lifetime-risk>10-15%</lifetime-risk>
+      <annual-incidence>0.5-1.5% per year</annual-incidence>
+      <peak-risk>Within first year of PSC diagnosis and at time of decompensation</peak-risk>
+    </risk-in-psc>
+
+    <surveillance>
+      <recommendation>Annual surveillance with MRI/MRCP and CA 19-9</recommendation>
+      <imaging-findings-concerning-for-cca>
+        <finding>New dominant stricture</finding>
+        <finding>Mass lesion</finding>
+        <finding>Progression of stricture on serial imaging</finding>
+        <finding>Biliary dilation proximal to stricture with progressive worsening</finding>
+      </imaging-findings-concerning-for-cca>
+    </surveillance>
+
+    <tumor-markers>
+      <marker name="CA 19-9">
+        <cutoff>129 U/mL</cutoff>
+        <sensitivity>~79%</sensitivity>
+        <specificity>~98%</specificity>
+        <limitations>
+          <limitation>Lewis antigen negative patients (5-10% of population) do not produce CA 19-9</limitation>
+          <limitation>Elevated in cholangitis, cholestasis, other malignancies</limitation>
+        </limitations>
+      </marker>
+    </tumor-markers>
+
+    <diagnostic-workup>
+      <ercp-based>
+        <brush-cytology>
+          <sensitivity>45-65%</sensitivity>
+          <specificity>95-100%</specificity>
+        </brush-cytology>
+        <fish-for-polysomy>
+          <description>Fluorescence in situ hybridisation for chromosomal polysomy</description>
+          <improves>Sensitivity when combined with cytology</improves>
+          <interpretation>Polysomy highly specific for malignancy</interpretation>
+        </fish-for-polysomy>
+        <cholangioscopy>
+          <sensitivity-visual>90%</sensitivity-visual>
+          <sensitivity-biopsy>60%</sensitivity-biopsy>
+          <indication>Indeterminate strictures</indication>
+        </cholangioscopy>
+      </ercp-based>
+      <cross-sectional-imaging>
+        <mri-mrcp>Preferred for bile duct evaluation</mri-mrcp>
+        <ct>Staging, assessment of vascular involvement</ct>
+        <pet-ct>May help detect occult metastases</pet-ct>
+      </cross-sectional-imaging>
+      <guidance-statement>Multimodal approach often needed; negative cytology does not exclude CCA</guidance-statement>
+    </diagnostic-workup>
+
+    <classification>
+      <type name="Intrahepatic cholangiocarcinoma (iCCA)">
+        <location>Proximal to second-order bile ducts</location>
+        <subtypes>
+          <subtype>Large duct type</subtype>
+          <subtype>Small duct type</subtype>
+        </subtypes>
+      </type>
+      <type name="Perihilar cholangiocarcinoma (pCCA)">
+        <location>Between second-order bile ducts and cystic duct insertion</location>
+        <synonym>Klatskin tumour</synonym>
+        <staging-system>Bismuth-Corlette classification</staging-system>
+      </type>
+      <type name="Distal cholangiocarcinoma (dCCA)">
+        <location>Below cystic duct insertion</location>
+      </type>
+    </classification>
+
+    <risk-factors>
+      <factor name="PSC" odds-ratio="22">Leading risk factor in Western countries</factor>
+      <factor name="Liver flukes" odds-ratio="5">Endemic in Southeast Asia (Opisthorchis viverrini, Clonorchis sinensis)</factor>
+      <factor name="Hepatolithiasis" odds-ratio="15">More common in East Asia</factor>
+      <factor name="Choledochal cysts" odds-ratio="26"/>
+      <factor name="Caroli disease" odds-ratio="38"/>
+      <factor name="Cirrhosis" odds-ratio="15.32"/>
+      <factor name="Chronic HBV" odds-ratio="4.57"/>
+      <factor name="Chronic HCV" odds-ratio="4.28"/>
+      <factor name="NAFLD" odds-ratio="2.2"/>
+      <factor name="Thorotrast exposure" relative-risk=">300"/>
+    </risk-factors>
+
+    <molecular-alterations>
+      <alteration gene="IDH1" frequency="10-20% iCCA">
+        <therapy>Ivosidenib</therapy>
+        <fda-approved>Yes</fda-approved>
+      </alteration>
+      <alteration gene="IDH2" frequency="1-5% iCCA">
+        <therapy>Under investigation</therapy>
+      </alteration>
+      <alteration gene="FGFR2" type="fusion/rearrangement" frequency="10-15% iCCA">
+        <therapy>Pemigatinib, infigratinib, futibatinib</therapy>
+        <fda-approved>Yes</fda-approved>
+      </alteration>
+      <alteration gene="BRAF V600E" frequency="3-5%">
+        <therapy>Dabrafenib + trametinib</therapy>
+      </alteration>
+      <alteration gene="HER2" frequency="5-15%">
+        <therapy>Trastuzumab-based therapy</therapy>
+      </alteration>
+      <alteration gene="MSI-H/dMMR" frequency="1-2%">
+        <therapy>Pembrolizumab</therapy>
+        <fda-approved>Yes</fda-approved>
+      </alteration>
+      <alteration gene="BRCA1/2" frequency="3-5%">
+        <therapy>PARP inhibitors (under investigation)</therapy>
+      </alteration>
+      <alteration gene="NTRK fusion" frequency="&lt;1%">
+        <therapy>Larotrectinib, entrectinib</therapy>
+        <fda-approved>Yes</fda-approved>
+      </alteration>
+      <guidance-statement>Comprehensive genomic profiling recommended for advanced CCA</guidance-statement>
+    </molecular-alterations>
+
+    <treatment>
+      <surgical-resection>
+        <indication>Localised disease amenable to complete resection</indication>
+        <goals>
+          <goal>R0 resection (negative margins)</goal>
+          <goal>Adequate lymphadenectomy</goal>
+        </goals>
+        <by-location>
+          <icca>Hepatectomy with adequate margins</icca>
+          <pcca>Hepatectomy with bile duct resection; may require vascular resection</pcca>
+          <dcca>Pancreaticoduodenectomy</dcca>
+        </by-location>
+      </surgical-resection>
+
+      <liver-transplantation-for-pcca>
+        <protocol>Mayo protocol (neoadjuvant chemoradiation followed by LT)</protocol>
+        <criteria>
+          <criterion>Unresectable pCCA or pCCA arising in PSC</criterion>
+          <criterion>Tumour ≤3 cm radial diameter</criterion>
+          <criterion>No intrahepatic or extrahepatic metastases</criterion>
+          <criterion>No prior attempt at surgical resection</criterion>
+        </criteria>
+        <neoadjuvant-protocol>
+          <component>External beam radiation with concurrent 5-FU</component>
+          <component>Brachytherapy boost</component>
+          <component>Maintenance capecitabine until transplant</component>
+          <component>Staging laparotomy prior to transplant</component>
+        </neoadjuvant-protocol>
+        <outcomes>
+          <five-year-survival>65-74%</five-year-survival>
+          <dropout-rate>30-40%</dropout-rate>
+        </outcomes>
+      </liver-transplantation-for-pcca>
+
+      <adjuvant-therapy>
+        <recommendation>Capecitabine for 6 months following resection</recommendation>
+        <evidence>BILCAP trial</evidence>
+      </adjuvant-therapy>
+
+      <systemic-therapy>
+        <first-line>
+          <regimen>Gemcitabine plus cisplatin plus durvalumab</regimen>
+          <alternative>Gemcitabine plus cisplatin</alternative>
+        </first-line>
+        <second-line>
+          <regimen>FOLFOX</regimen>
+          <targeted-options>
+            <option mutation="IDH1">Ivosidenib</option>
+            <option mutation="FGFR2">Pemigatinib, infigratinib, futibatinib</option>
+            <option mutation="MSI-H">Pembrolizumab</option>
+            <option mutation="BRAF V600E">Dabrafenib plus trametinib</option>
+          </targeted-options>
+        </second-line>
+      </systemic-therapy>
+    </treatment>
+  </cholangiocarcinoma>
+
+  <guidance-statements-summary>
+    <section name="PSC Diagnosis">
+      <statement number="1">Suspect PSC in patients with cholestatic liver tests, particularly with IBD</statement>
+      <statement number="2">MRCP is preferred initial imaging</statement>
+      <statement number="3">Check IgG4 to exclude IgG4-related disease</statement>
+      <statement number="4">Liver biopsy not required for classic large duct PSC</statement>
+    </section>
+    <section name="PSC Management">
+      <statement number="5">UDCA at moderate doses (13-23 mg/kg/day) may be considered</statement>
+      <statement number="6">Avoid high-dose UDCA (28-30 mg/kg/day)</statement>
+      <statement number="7">Manage dominant strictures with ERCP and tissue sampling</statement>
+    </section>
+    <section name="Cancer Surveillance">
+      <statement number="8">Annual MRI/MRCP and CA 19-9 for CCA surveillance</statement>
+      <statement number="9">Annual colonoscopy for colorectal cancer surveillance in PSC-IBD</statement>
+      <statement number="10">Cholecystectomy for any gallbladder polyp in PSC</statement>
+    </section>
+    <section name="CCA Diagnosis">
+      <statement number="11">Multimodal diagnostic approach for suspected CCA</statement>
+      <statement number="12">Negative cytology does not exclude CCA</statement>
+      <statement number="13">Consider FISH for polysomy in indeterminate strictures</statement>
+    </section>
+    <section name="CCA Treatment">
+      <statement number="14">Surgical resection for localised resectable disease</statement>
+      <statement number="15">Liver transplantation under strict protocols for selected pCCA</statement>
+      <statement number="16">Comprehensive genomic profiling for advanced disease</statement>
+      <statement number="17">Adjuvant capecitabine following resection</statement>
+    </section>
+  </guidance-statements-summary>
+</clinical-guideline>

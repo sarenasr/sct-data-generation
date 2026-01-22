@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guideline>
+  <metadata>
+    <title>AASLD Practice Guidance on Prevention, Diagnosis, and Treatment of Hepatocellular Carcinoma</title>
+    <organization>American Association for the Study of Liver Diseases (AASLD)</organization>
+    <year>2023</year>
+  </metadata>
+
+  <epidemiology>
+    <trends>HCC is the most rapidly increasing cause of cancer death in the United States</trends>
+    <nafld_emergence>NAFLD is becoming a leading cause of HCC, particularly HCC arising in non-cirrhotic liver</nafld_emergence>
+    <risk_stratification>
+      <hbv>Annual HCC incidence 0.2-0.6% without cirrhosis, 2-8% with cirrhosis</hbv>
+      <hcv>Annual HCC incidence 1-8% with cirrhosis; remains elevated after SVR</hcv>
+      <nafld>Annual HCC incidence 0.5-2.6% in NAFLD-cirrhosis; 10-20% occur without cirrhosis</nafld>
+      <alcohol>Annual HCC incidence 1-4% in alcohol-related cirrhosis</alcohol>
+    </risk_stratification>
+    <risk_factors>
+      <modifiable>
+        <factor>Alcohol consumption</factor>
+        <factor>Obesity</factor>
+        <factor>Diabetes</factor>
+        <factor>Smoking</factor>
+        <factor>Aflatoxin exposure</factor>
+      </modifiable>
+      <protective>
+        <factor>Coffee consumption (inverse association)</factor>
+        <factor>Aspirin use (may reduce risk)</factor>
+        <factor>Statins (may reduce risk)</factor>
+      </protective>
+    </risk_factors>
+  </epidemiology>
+
+  <surveillance>
+    <target_populations>
+      <cirrhosis>All patients with cirrhosis who would be candidates for HCC treatment</cirrhosis>
+      <hbv_without_cirrhosis>Selected HBV patients: Asian males greater than 40, Asian females greater than 50, Africans greater than 20, family history of HCC, high HBV DNA</hbv_without_cirrhosis>
+      <post_svr>Patients with HCV and advanced fibrosis (F3) or cirrhosis after SVR</post_svr>
+      <nafld>Consider in NAFLD-cirrhosis; no clear guidance for non-cirrhotic NAFLD</nafld>
+    </target_populations>
+    <modality>
+      <primary>Ultrasound with or without AFP every 6 months</primary>
+      <meta_analysis>Surveillance improves early detection (OR 2.08), curative treatment receipt (OR 2.24), and survival (OR 1.90)</meta_analysis>
+      <ultrasound_quality>
+        <visualization>LI-RADS US visualization score should be documented</visualization>
+        <inadequate>US visualization score C (severely limited) in approximately 20% of patients</inadequate>
+        <alternative>Consider CT or MRI for patients with inadequate US visualization</alternative>
+      </ultrasound_quality>
+      <afp>
+        <sensitivity>Approximately 60% at 20 ng/mL threshold</sensitivity>
+        <additive>Adds 6-8% sensitivity to ultrasound alone</additive>
+        <galad>GALAD score (sex, age, AFP-L3, AFP, DCP) improves detection but not widely available</galad>
+      </afp>
+      <abbreviated_mri>Emerging alternative with higher sensitivity; cost-effectiveness being evaluated</abbreviated_mri>
+    </modality>
+    <exclusion>
+      <condition>Child-Pugh C cirrhosis not listed for liver transplantation</condition>
+      <condition>Significant comorbidities limiting life expectancy or treatment eligibility</condition>
+    </exclusion>
+    <interval>6 months based on tumor doubling time data</interval>
+  </surveillance>
+
+  <diagnosis>
+    <imaging>
+      <li_rads>
+        <recommendation>LI-RADS classification recommended for CT and MRI in patients at risk for HCC</recommendation>
+        <lr5>Definite HCC - specificity 95-100%</lr5>
+        <lr4>Probably HCC - approximately 75% are HCC</lr4>
+        <lr3>Intermediate - approximately 35% are HCC</lr3>
+        <lr_m>Malignant, not HCC-specific - biopsy recommended</lr_m>
+        <major_features>
+          <feature>Arterial phase hyperenhancement (APHE)</feature>
+          <feature>Non-peripheral washout</feature>
+          <feature>Enhancing capsule</feature>
+          <feature>Threshold growth (greater than or equal to 50% in less than 6 months)</feature>
+        </major_features>
+      </li_rads>
+      <ceus>
+        <role>Alternative for characterization when CT/MRI inconclusive or contraindicated</role>
+        <ceus_li_rads>Separate CEUS LI-RADS criteria available</ceus_li_rads>
+      </ceus>
+    </imaging>
+    <biopsy>
+      <indication>LI-RADS 3 or 4 observations</indication>
+      <indication>LR-M (atypical features suggesting non-HCC malignancy)</indication>
+      <indication>Non-cirrhotic patients</indication>
+      <indication>When pathology influences treatment decisions</indication>
+      <immunohistochemistry>HSP70, glypican-3, glutamine synthetase panel for early/well-differentiated HCC</immunohistochemistry>
+    </biopsy>
+    <biomarkers>
+      <afp>Not sufficient alone for diagnosis; useful as adjunct</afp>
+      <emerging>ctDNA, extracellular vesicles under investigation</emerging>
+    </biomarkers>
+  </diagnosis>
+
+  <staging>
+    <bclc_2022>
+      <description>BCLC 2022 updated staging system recommended</description>
+      <modification>PS 0-1 for BCLC 0, A, B; PS 0-2 for BCLC C</modification>
+      <stages>
+        <stage name="0">Single less than 2 cm, Child-Pugh A, PS 0-1</stage>
+        <stage name="A">Single or up to 3 nodules up to 3 cm, Child-Pugh A-B, PS 0-1</stage>
+        <stage name="B">Multinodular, Child-Pugh A-B, PS 0-1</stage>
+        <stage name="C">Portal invasion and/or extrahepatic spread, Child-Pugh A-B, PS 0-2</stage>
+        <stage name="D">Child-Pugh C or PS greater than 2</stage>
+      </stages>
+    </bclc_2022>
+    <liver_function_assessment>
+      <child_pugh>Standard assessment</child_pugh>
+      <albi>ALBI grade provides additional stratification</albi>
+      <portal_hypertension>
+        <hvpg>Greater than or equal to 10 mmHg indicates clinically significant portal hypertension</hvpg>
+        <indirect>Platelets less than 100,000 with splenomegaly</indirect>
+        <imaging>Varices, splenomegaly, collaterals on imaging</imaging>
+      </portal_hypertension>
+      <future_liver_remnant>Volumetric assessment for resection planning</future_liver_remnant>
+    </liver_function_assessment>
+    <extrahepatic_evaluation>
+      <ct_chest>Required for staging</ct_chest>
+      <bone_imaging>If symptomatic or elevated alkaline phosphatase</bone_imaging>
+    </extrahepatic_evaluation>
+  </staging>
+
+  <treatment>
+    <multidisciplinary>
+      <recommendation>All HCC patients should be discussed in a multidisciplinary tumor board</recommendation>
+      <evidence>MDT care associated with improved survival (meta-analysis)</evidence>
+    </multidisciplinary>
+
+    <resection>
+      <indication>
+        <bclc>BCLC 0/A</bclc>
+        <liver_function>Child-Pugh A, no clinically significant portal hypertension</liver_function>
+        <non_cirrhotic>Treatment of choice for HCC in non-cirrhotic liver</non_cirrhotic>
+      </indication>
+      <outcomes>
+        <five_year_survival>60-80%</five_year_survival>
+        <recurrence>50-70% at 5 years</recurrence>
+      </outcomes>
+      <techniques>
+        <laparoscopic>Preferred when feasible; reduced decompensation, shorter stay</laparoscopic>
+        <pve>Portal vein embolization for insufficient FLR (expect 20-25% increase)</pve>
+        <tare>Y90 radiation lobectomy as alternative to PVE with simultaneous tumor treatment</tare>
+        <alpps>Reserved for highly selected cases</alpps>
+      </outcomes>
+      <portal_hypertension>
+        <selected>Selected patients with mild PH may undergo small resections</selected>
+        <laparoscopic>Laparoscopic approach may expand resection eligibility in PH</laparoscopic>
+      </portal_hypertension>
+      <surveillance_post_resection>CT or MRI every 3-6 months, shorter intervals in first year</surveillance_post_resection>
+      <hcv_treatment>DAA treatment after resection for HCV-related HCC (3-6 month observation first)</hcv_treatment>
+    </resection>
+
+    <adjuvant_therapy>
+      <storm_trial>Sorafenib showed no benefit (RFS 33.3 vs 33.7 months)</storm_trial>
+      <imbrave050>
+        <regimen>Atezolizumab plus bevacizumab</regimen>
+        <population>High-risk HCC after resection or ablation</population>
+        <outcome>Improved recurrence-free survival (HR 0.72)</outcome>
+        <status>First positive adjuvant trial; practice-changing</status>
+      </imbrave050>
+      <neoadjuvant>
+        <trials>Ongoing studies of ICI-based neoadjuvant therapy (cabozantinib/nivolumab, nivolumab/ipilimumab)</trials>
+        <preliminary>Early pathological responses observed; needs further validation</preliminary>
+      </neoadjuvant>
+    </adjuvant_therapy>
+
+    <liver_transplantation>
+      <criteria>
+        <milan>Single up to 5 cm or 2-3 up to 3 cm each, no vascular invasion</milan>
+        <ucsf>Single up to 6.5 cm or 2-3 with largest up to 4.5 cm, total diameter up to 8 cm</ucsf>
+        <toronto>Extended criteria with more liberal tumor burden cutoffs</toronto>
+        <afp_integration>AFP-based models improve selection (AFP less than 1000 ng/mL required for exception)</afp_integration>
+      </criteria>
+      <us_allocation>
+        <meld_exception>Automatic MELD exception for T2 HCC meeting criteria after 6-month waiting period</meld_exception>
+        <nlrb>National Liver Review Board for cases outside standard criteria</nlrb>
+        <downstaging>Standardized UCSF downstaging pathway available</downstaging>
+      </us_allocation>
+      <bridging>
+        <indication>Expected wait time greater than 6 months</indication>
+        <modalities>TACE, TARE, ablation, SBRT - no proven superiority of one modality</modalities>
+        <goal>Prevent progression and waitlist dropout</goal>
+      </bridging>
+      <downstaging>
+        <ucsf_criteria>Up to 5 tumors, largest up to 4.5 cm, total diameter up to 8 cm</ucsf_criteria>
+        <success_rate>40-70% achieve downstaging to within Milan</success_rate>
+        <observation>3-6 month observation period to assess tumor biology</observation>
+        <outcomes>Similar post-LT outcomes to patients presenting within criteria</outcomes>
+      </downstaging>
+      <living_donor>
+        <indication>May extend access, particularly in regions with long wait times</indication>
+        <outcomes>Comparable or superior ITT outcomes to deceased donor</outcomes>
+      </living_donor>
+      <ici_bridging>
+        <caution>ICIs before transplant may increase rejection risk</caution>
+        <washout>Consider adequate washout period if ICI used pre-LT</washout>
+      </ici_bridging>
+      <post_transplant>
+        <surveillance>CT chest/abdomen every 6 months for 5 years minimum</surveillance>
+        <retreat_score>Risk stratification based on explant pathology (0-5 score)</retreat_score>
+        <immunosuppression>mTOR inhibitors may reduce recurrence in high-risk patients (SiLVER trial)</immunosuppression>
+      </post_transplant>
+    </liver_transplantation>
+
+    <ablation>
+      <indication>BCLC 0/A, tumors up to 3 cm, not surgical candidates</indication>
+      <modalities>
+        <rfa>Standard; best for less than 3 cm</rfa>
+        <mwa>Superior for 3-5 cm; less heat-sink effect</mwa>
+        <pei>Reserved for tumors where thermal ablation contraindicated</pei>
+      </modalities>
+      <combination>
+        <tace_plus_ablation>May improve outcomes for 3-5 cm tumors</tace_plus_ablation>
+      </combination>
+      <surveillance>CT or MRI every 3-6 months post-ablation</surveillance>
+      <outcomes>
+        <complete_ablation>90-95% for tumors less than 3 cm</complete_ablation>
+        <local_recurrence>10-30% at 5 years</local_recurrence>
+        <five_year_survival>40-70%</five_year_survival>
+      </outcomes>
+    </ablation>
+
+    <radiotherapy>
+      <sbrt>
+        <indication>Alternative when ablation not feasible; bridge to LT</indication>
+        <evidence>Proton beam vs RFA RCT showed comparable outcomes for recurrent HCC</evidence>
+        <outcomes>Local control 87-100%</outcomes>
+      </sbrt>
+      <nrg_rtog_1112>SBRT followed by sorafenib vs sorafenib alone - results awaited</nrg_rtog_1112>
+    </radiotherapy>
+
+    <tace>
+      <indication>BCLC B intermediate stage; unsuitable for curative therapy</indication>
+      <techniques>
+        <conventional>Lipiodol-based cTACE</conventional>
+        <deb_tace>Drug-eluting beads</deb_tace>
+        <tae>Bland embolization - comparable efficacy in some trials</tae>
+      </techniques>
+      <outcomes>Median survival 26-40 months with optimal selection</outcomes>
+      <response_assessment>mRECIST recommended</response_assessment>
+      <retreatment>
+        <art_score>Predicts benefit of repeat TACE; score greater than 2.5 suggests transition to systemic</art_score>
+        <refractoriness>Failure to respond after 2 sessions or stage progression</refractoriness>
+      </retreatment>
+      <combination_systemic>
+        <negative_trials>TACE plus sorafenib, TACE plus brivanib - no OS benefit</negative_trials>
+        <launch_trial>TACE plus lenvatinib for advanced HCC - positive in Chinese population</launch_trial>
+      </combination_systemic>
+    </tace>
+
+    <tare>
+      <indication>Alternative to TACE for BCLC B; segmental PVT; bridge to resection/LT</indication>
+      <products>Y90 glass or resin microspheres</products>
+      <dosimetry>Personalized dosimetry improves outcomes (DOSISPHERE-01: greater than 205 Gy)</dosimetry>
+      <outcomes>Median survival 16-20 months</outcomes>
+      <radiation_segmentectomy>Curative intent for small tumors (RASER study: 88% pathologic necrosis)</radiation_segmentectomy>
+      <trials>
+        <sarah>TARE vs sorafenib: no OS difference (8.0 vs 9.9 months)</sarah>
+        <sirvenib>TARE vs sorafenib: no OS difference (8.8 vs 10.0 months)</sirvenib>
+        <trace>TARE vs DEB-TACE: no OS difference but improved TTP with TARE</trace>
+      </trials>
+    </tare>
+
+    <systemic_therapy>
+      <first_line>
+        <atezolizumab_bevacizumab>
+          <evidence>IMbrave 150</evidence>
+          <outcomes>
+            <os>19.2 vs 13.4 months (HR 0.66)</os>
+            <orr>27.3% vs 11.9%</orr>
+          </outcomes>
+          <indication>First-line for BCLC C or TACE-refractory, Child-Pugh A</indication>
+          <requirements>
+            <egd>Upper endoscopy within 6 months; treat varices if needed</egd>
+            <no_autoimmune>Active autoimmune disease contraindicated</no_autoimmune>
+            <no_transplant>Not recommended post-transplant</no_transplant>
+          </requirements>
+        </atezolizumab_bevacizumab>
+
+        <durvalumab_tremelimumab>
+          <evidence>HIMALAYA</evidence>
+          <outcomes>
+            <os>16.4 vs 13.8 months (HR 0.78)</os>
+            <three_year_os>30.7% vs 20.2%</three_year_os>
+          </outcomes>
+          <regimen>STRIDE: Tremelimumab 300 mg single dose plus durvalumab 1500 mg, then durvalumab q4w</regimen>
+          <advantage>Alternative when bevacizumab contraindicated</advantage>
+        </durvalumab_tremelimumab>
+
+        <negative_trials>
+          <leap_002>Lenvatinib plus pembrolizumab vs lenvatinib - did not meet primary endpoint</leap_002>
+          <cosmic_312>Cabozantinib plus atezolizumab vs sorafenib - did not meet OS endpoint</cosmic_312>
+        </negative_trials>
+
+        <tkis_if_ici_ineligible>
+          <lenvatinib>13.6 months mOS (REFLECT); non-inferior to sorafenib</lenvatinib>
+          <sorafenib>10.7 months mOS (SHARP); established standard</sorafenib>
+        </tkis_if_ici_ineligible>
+      </first_line>
+
+      <second_line>
+        <regorafenib>
+          <evidence>RESORCE</evidence>
+          <outcomes>10.6 vs 7.8 months mOS (HR 0.63)</outcomes>
+          <indication>Post-sorafenib</indication>
+        </regorafenib>
+        <cabozantinib>
+          <evidence>CELESTIAL</evidence>
+          <outcomes>10.2 vs 8.0 months mOS (HR 0.76)</outcomes>
+          <indication>Second/third line</indication>
+        </cabozantinib>
+        <ramucirumab>
+          <evidence>REACH-2</evidence>
+          <outcomes>8.5 vs 7.3 months mOS (HR 0.71)</outcomes>
+          <indication>AFP greater than or equal to 400 ng/mL</indication>
+        </ramucirumab>
+        <pembrolizumab>
+          <evidence>KEYNOTE-240, KEYNOTE-394</evidence>
+          <outcomes>Improved OS in Asian population (KEYNOTE-394)</outcomes>
+        </pembrolizumab>
+        <nivolumab_ipilimumab>
+          <evidence>CheckMate 040 (Phase I/II)</evidence>
+          <outcomes>22.8 months mOS; 32% ORR</outcomes>
+          <indication>Second line after sorafenib</indication>
+        </nivolumab_ipilimumab>
+      </second_line>
+
+      <child_pugh_b>
+        <data>Limited; sorafenib mOS 5.2 months in B7</data>
+        <ici_data>CheckMate 040 subset: 12% ORR, 7.6 months mOS in Child-Pugh B7-B8</ici_data>
+        <recommendation>Case-by-case consideration for well-compensated B7</recommendation>
+      </child_pugh_b>
+
+      <post_transplant>
+        <recommendation>ICIs contraindicated due to high rejection risk</recommendation>
+        <tkis>Sorafenib may be considered with limited efficacy data</tkis>
+      </post_transplant>
+
+      <guidance_statements>
+        <statement number="46">Atezolizumab-bevacizumab or durvalumab-tremelimumab preferred first-line for advanced HCC with Child-Pugh A</statement>
+        <statement number="47">Upper endoscopy required before atezolizumab-bevacizumab; avoid with high-risk varices</statement>
+        <statement number="48">After ICI progression, second-line TKI (cabozantinib, regorafenib) or ramucirumab (if AFP elevated) recommended</statement>
+        <statement number="49">ICIs should not be used in post-transplant patients due to rejection risk</statement>
+        <statement number="50">Advance care planning should be discussed for patients with advanced HCC</statement>
+      </guidance_statements>
+    </systemic_therapy>
+  </treatment>
+
+  <special_populations>
+    <nafld_hcc>
+      <prevalence>Growing proportion of HCC cases, often diagnosed at advanced stage</prevalence>
+      <non_cirrhotic>10-20% of NAFLD-HCC occurs without cirrhosis</non_cirrhotic>
+      <surveillance_challenge>No clear surveillance recommendations for non-cirrhotic NAFLD</surveillance_challenge>
+      <treatment_response>Generally similar outcomes to viral HCC when matched by stage</treatment_response>
+    </nafld_hcc>
+    <portal_vein_tumor_thrombus>
+      <classification>Main portal vein vs branch involvement affects prognosis</classification>
+      <systemic>Systemic therapy is standard</systemic>
+      <tare>TARE may be considered for segmental/lobar PVTT</tare>
+      <resection>Selected cases with branch PVTT may benefit from surgery</resection>
+    </portal_vein_tumor_thrombus>
+  </special_populations>
+
+  <palliative_care>
+    <indication>BCLC D, declining performance status, patient preference</indication>
+    <components>
+      <symptom_management>Pain, ascites, encephalopathy, anorexia</symptom_management>
+      <advance_care_planning>Should be initiated early in advanced disease</advance_care_planning>
+      <hospice>Consider for those not benefiting from active treatment</hospice>
+    </components>
+    <reference>AASLD Practice Guidance on Palliative Care for decompensated cirrhosis</reference>
+  </palliative_care>
+
+  <response_assessment>
+    <systemic_therapy>RECIST v1.1 standard; mRECIST provides complementary information</systemic_therapy>
+    <locoregional>mRECIST recommended for TACE/TARE assessment</locoregional>
+  </response_assessment>
+</guideline>

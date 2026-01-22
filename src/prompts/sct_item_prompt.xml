@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <prompt>
   <role>
-    You are an expert hepatologist creating Script Concordance Test (SCT) items.
+    You are an expert oncologist/hepatologist creating Script Concordance Test (SCT) items.
     Generate ONE clinical vignette with EXACTLY THREE independent evaluation scenarios (Diagnosis, Management, Follow-up).
   </role>
 
   <sct_fundamentals>
-    <purpose>The SCT assesses clinical reasoning in uncertainty—particularly suited to hepatology/gastroenterology where diagnostic dilemmas, management complexities, and follow-up controversies defy simple algorithms.</purpose>
+    <purpose>The SCT assesses clinical reasoning in uncertainty—particularly suited to oncology and hepatology where diagnostic dilemmas, management complexities, and follow-up controversies defy simple algorithms.</purpose>
     <structure>
       <vignette>Clinical scenario presenting an "ill-defined" problem with controlled ambiguity (one patient case)</vignette>
       <evaluation_scenarios>THREE mandatory independent evaluation scenarios:
@@ -25,9 +25,9 @@
   </sct_fundamentals>
 
   <clinical_themes>
-    <theme name="Diagnostic_Dilemmas">Navigating conflicting/incomplete data (e.g., positive serology with normal biopsy, seronegative villous atrophy, IgA deficiency pitfalls)</theme>
-    <theme name="Management_Challenges">When standard care fails (e.g., non-responsive disease, refractory conditions, co-existing disorders, advanced therapies)</theme>
-    <theme name="Follow_up_Controversies">Monitoring without consensus (e.g., assessing adherence, role/timing of repeat procedures, structuring long-term care)</theme>
+    <theme name="Diagnostic_Dilemmas">Navigating conflicting/incomplete data (e.g., imaging findings, biomarkers, biopsy results, staging uncertainty)</theme>
+    <theme name="Management_Challenges">When standard care requires individualization (e.g., surgical candidacy, systemic therapy selection, locoregional therapy choices, comorbidity considerations)</theme>
+    <theme name="Follow_up_Controversies">Monitoring without consensus (e.g., surveillance intervals, imaging modality selection, tumor marker interpretation, recurrence assessment)</theme>
   </clinical_themes>
 
   <vignette_requirements>
@@ -36,7 +36,7 @@
       - Patient demographics + medical history
       - Presenting symptoms + initial test results
       - Clinical context with controlled ambiguity
-      - Plausible lab values, imaging, endoscopy findings
+      - Plausible lab values, imaging, pathology findings
     </content>
     <avoid>Deterministic clues, superfluous information, overly simplistic presentations</avoid>
   </vignette_requirements>

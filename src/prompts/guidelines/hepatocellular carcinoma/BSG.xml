@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guideline>
+  <metadata>
+    <title>BSG/BASL/BSIR Guidelines for the Management of Hepatocellular Carcinoma (HCC) in Adults</title>
+    <organization>British Society of Gastroenterology (BSG), British Association for the Study of the Liver (BASL), British Society of Interventional Radiology (BSIR)</organization>
+    <country>United Kingdom</country>
+  </metadata>
+
+  <epidemiology>
+    <incidence>HCC is the sixth most common malignancy and third most common cause of cancer-related death worldwide</incidence>
+    <uk_data>
+      <incidence_rate>6 per 100,000 in the UK, with rates increasing</incidence_rate>
+      <annual_cases>Approximately 6,100 new cases annually in the UK</annual_cases>
+      <male_female_ratio>2.4:1</male_female_ratio>
+    </uk_data>
+    <risk_factors>
+      <factor>Cirrhosis (any cause)</factor>
+      <factor>Chronic hepatitis B (even without cirrhosis)</factor>
+      <factor>Chronic hepatitis C</factor>
+      <factor>Non-alcoholic fatty liver disease (NAFLD)</factor>
+      <factor>Alcohol-related liver disease</factor>
+      <factor>Hereditary haemochromatosis</factor>
+      <factor>Primary biliary cholangitis</factor>
+      <factor>Autoimmune hepatitis</factor>
+    </risk_factors>
+  </epidemiology>
+
+  <surveillance>
+    <target_population>
+      <group>All patients with cirrhosis of any aetiology who would be fit for treatment</group>
+      <group>Patients with chronic HBV infection with significant fibrosis (F3) or family history of HCC</group>
+      <group>Patients with chronic HBV infection from endemic regions</group>
+    </target_population>
+    <modality>
+      <primary>Ultrasound surveillance every 6 months</primary>
+      <notes>AFP is not recommended as a standalone surveillance tool</notes>
+      <quality>Surveillance ultrasound should achieve visualisation of at least 80% of the liver</quality>
+    </modality>
+    <exclusion>Surveillance should not be offered to patients with Child-Pugh C cirrhosis unless awaiting liver transplantation</exclusion>
+  </surveillance>
+
+  <diagnosis>
+    <imaging>
+      <modality name="CT/MRI">
+        <criteria>Arterial phase hyperenhancement (APHE) and washout in the portal venous or delayed phase</criteria>
+        <specificity>Greater than 95% for HCC in cirrhotic liver</specificity>
+        <li_rads>LI-RADS classification recommended for nodules detected on surveillance</li_rads>
+      </modality>
+      <modality name="CEUS">
+        <role>Can be used for characterisation of nodules detected on surveillance ultrasound</role>
+        <note>Not first-line for staging</note>
+      </modality>
+    </imaging>
+    <biopsy>
+      <indication>Recommended when imaging is inconclusive (LI-RADS 3-4)</indication>
+      <indication>Required for non-cirrhotic patients</indication>
+      <indication>For atypical lesions or when considering systemic therapy where diagnosis affects treatment</indication>
+      <note>Needle track seeding risk is approximately 2.7% (meta-analysis)</note>
+    </biopsy>
+    <biomarkers>
+      <afp>
+        <utility>Not recommended for diagnosis alone</utility>
+        <note>AFP greater than 400 ng/mL is highly suggestive of HCC in appropriate clinical context</note>
+        <note>AFP-L3 and DCP not widely available in UK</note>
+      </afp>
+    </biomarkers>
+  </diagnosis>
+
+  <staging>
+    <system name="BCLC">
+      <endorsement>Recommended for staging and treatment allocation in the UK</endorsement>
+      <stages>
+        <stage name="0" description="Very early">Single nodule less than 2 cm, preserved liver function, PS 0</stage>
+        <stage name="A" description="Early">Single or up to 3 nodules each less than 3 cm, preserved liver function, PS 0</stage>
+        <stage name="B" description="Intermediate">Multinodular, preserved liver function, PS 0</stage>
+        <stage name="C" description="Advanced">Portal invasion and/or extrahepatic spread, preserved liver function, PS 1-2</stage>
+        <stage name="D" description="Terminal">Child-Pugh C or PS 3-4</stage>
+      </stages>
+    </system>
+    <liver_function>
+      <assessment>Child-Pugh score and ALBI grade</assessment>
+      <portal_hypertension>Platelet count less than 100,000/mcL suggests clinically significant portal hypertension</portal_hypertension>
+    </liver_function>
+  </staging>
+
+  <treatment>
+    <surgical_resection>
+      <indication>BCLC 0/A with preserved liver function, no clinically significant portal hypertension</indication>
+      <outcomes>
+        <five_year_survival>60%</five_year_survival>
+        <perioperative_mortality>2-3%</perioperative_mortality>
+      </outcomes>
+      <future_liver_remnant>Minimum 40% FLR required for safe resection in cirrhotic patients</future_liver_remnant>
+      <approaches>
+        <approach>Laparoscopic resection may offer benefits (shorter hospital stay, less decompensation)</approach>
+        <approach>Portal vein embolisation for insufficient FLR</approach>
+      </approaches>
+    </surgical_resection>
+
+    <liver_transplantation>
+      <uk_criteria>
+        <milan>Single tumour up to 5 cm or up to 3 tumours each up to 3 cm, no vascular invasion</milan>
+        <ucsf>Single tumour up to 6.5 cm or up to 3 tumours with largest up to 4.5 cm and total diameter up to 8 cm</ucsf>
+        <extended>
+          <description>UK extended criteria</description>
+          <single_tumour>Up to 5 cm with 6-month observation period demonstrating stable disease</single_tumour>
+          <multiple_tumours>Up to 5 lesions, each up to 3 cm</multiple_tumours>
+          <large_single>5-7 cm with 6-month observation period demonstrating no progression</large_single>
+          <afp_restriction>AFP less than 1000 ng/mL</afp_restriction>
+        </extended>
+      </uk_criteria>
+      <bridging>Recommended for patients with expected wait time greater than 6 months</bridging>
+      <downstaging>May be considered for patients exceeding criteria who respond to locoregional therapy</downstaging>
+    </liver_transplantation>
+
+    <ablation>
+      <indication>BCLC 0/A, tumours up to 3 cm, not suitable for resection or transplant</indication>
+      <modalities>
+        <modality name="RFA">
+          <efficacy>Complete ablation in greater than 90% for tumours less than 3 cm</efficacy>
+          <limitation>Heat-sink effect near major vessels</limitation>
+        </modality>
+        <modality name="MWA">
+          <efficacy>Similar or superior to RFA, less affected by heat-sink</efficacy>
+          <note>May allow treatment of larger tumours up to 5 cm</note>
+        </modality>
+        <modality name="Percutaneous ethanol injection">Not recommended as first-line</modality>
+      </modalities>
+      <outcomes>
+        <local_recurrence>10-30% at 5 years</local_recurrence>
+        <five_year_survival>40-60%</five_year_survival>
+      </outcomes>
+    </ablation>
+
+    <transarterial_therapies>
+      <tace>
+        <indication>BCLC B (intermediate stage)</indication>
+        <contraindications>
+          <item>Main portal vein thrombosis</item>
+          <item>Child-Pugh C</item>
+          <item>ECOG PS greater than 2</item>
+          <item>Extensive bilobar disease</item>
+        </contraindications>
+        <outcomes>
+          <median_survival>26-40 months for well-selected patients</median_survival>
+        </outcomes>
+        <variants>
+          <conventional_tace>Lipiodol-based chemoembolisation</conventional_tace>
+          <deb_tace>Drug-eluting bead TACE - no proven survival advantage over conventional</deb_tace>
+          <bland_embolisation>TAE without chemotherapy - comparable outcomes in some studies</bland_embolisation>
+        </variants>
+        <refractoriness>
+          <criteria>Failure to achieve objective response after 2 TACE sessions</criteria>
+          <criteria>Progression despite TACE</criteria>
+          <criteria>Deterioration in liver function post-TACE</criteria>
+        </refractoriness>
+      </tace>
+      <tare>
+        <indication>Alternative to TACE for BCLC B, particularly for large or infiltrative tumours</indication>
+        <indication>May be considered for BCLC C with segmental portal vein invasion</indication>
+        <products>
+          <product>Y90 glass microspheres (TheraSphere)</product>
+          <product>Y90 resin microspheres (SIR-Spheres)</product>
+        </products>
+        <outcomes>
+          <median_survival>16-20 months for intermediate stage</median_survival>
+        </outcomes>
+        <personalised_dosimetry>Higher tumour doses (greater than 205 Gy) associated with improved outcomes</personalised_dosimetry>
+      </tare>
+    </transarterial_therapies>
+
+    <external_beam_radiotherapy>
+      <sbrt>
+        <indication>Alternative to ablation when ablation not feasible</indication>
+        <indication>Bridging to transplant</indication>
+        <outcomes>Local control rates of 87-100%</outcomes>
+        <note>Limited UK experience, consider in specialist centres</note>
+      </sbrt>
+    </external_beam_radiotherapy>
+
+    <systemic_therapy>
+      <first_line>
+        <regimen name="Atezolizumab plus Bevacizumab">
+          <evidence>IMbrave 150 trial</evidence>
+          <outcomes>
+            <median_os>19.2 months vs 13.4 months for sorafenib</median_os>
+            <orr>27.3% vs 11.9%</orr>
+            <hr>0.66 (95% CI 0.52-0.85)</hr>
+          </outcomes>
+          <indication>First-line for advanced HCC (BCLC C) or TACE-refractory, Child-Pugh A</indication>
+          <requirement>EGD within 6 months to assess variceal risk before bevacizumab</requirement>
+          <contraindications>
+            <item>Untreated or high-risk varices</item>
+            <item>Recent GI bleeding</item>
+            <item>Active autoimmune disease</item>
+            <item>Post-transplant patients</item>
+          </contraindications>
+        </regimen>
+        <regimen name="Durvalumab plus Tremelimumab">
+          <evidence>HIMALAYA trial</evidence>
+          <outcomes>
+            <median_os>16.4 months vs 13.8 months for sorafenib</median_os>
+            <three_year_survival>30.7% vs 20.2%</three_year_survival>
+            <hr>0.78 (95% CI 0.65-0.92)</hr>
+          </outcomes>
+          <regimen_detail>STRIDE regimen: single priming dose of tremelimumab 300mg plus durvalumab 1500mg, then durvalumab monotherapy every 4 weeks</regimen_detail>
+          <advantage>Alternative for patients with contraindication to bevacizumab</advantage>
+        </regimen>
+        <regimen name="Sorafenib">
+          <evidence>SHARP trial, Asia-Pacific trial</evidence>
+          <outcomes>
+            <median_os>10.7 months vs 7.9 months for placebo</median_os>
+            <hr>0.69 (95% CI 0.55-0.87)</hr>
+          </outcomes>
+          <dose>400 mg twice daily</dose>
+          <adverse_effects>
+            <effect>Hand-foot skin reaction</effect>
+            <effect>Diarrhoea</effect>
+            <effect>Hypertension</effect>
+            <effect>Fatigue</effect>
+          </adverse_effects>
+          <role>Reserved for patients ineligible for immunotherapy</role>
+        </regimen>
+        <regimen name="Lenvatinib">
+          <evidence>REFLECT trial</evidence>
+          <outcomes>
+            <median_os>13.6 months vs 12.3 months for sorafenib (non-inferior)</median_os>
+            <orr>24% vs 9%</orr>
+          </outcomes>
+          <dose>12 mg daily for weight greater than or equal to 60 kg, 8 mg daily for weight less than 60 kg</dose>
+          <role>Alternative first-line option if immunotherapy not suitable</role>
+        </regimen>
+      </first_line>
+      <second_line>
+        <regimen name="Regorafenib">
+          <evidence>RESORCE trial</evidence>
+          <outcomes>
+            <median_os>10.6 months vs 7.8 months for placebo</median_os>
+            <hr>0.63 (95% CI 0.50-0.79)</hr>
+          </outcomes>
+          <indication>After progression on sorafenib</indication>
+        </regimen>
+        <regimen name="Cabozantinib">
+          <evidence>CELESTIAL trial</evidence>
+          <outcomes>
+            <median_os>10.2 months vs 8.0 months for placebo</median_os>
+            <hr>0.76 (95% CI 0.63-0.92)</hr>
+          </outcomes>
+          <indication>Second or third line after prior systemic therapy</indication>
+        </regimen>
+        <regimen name="Ramucirumab">
+          <evidence>REACH-2 trial</evidence>
+          <outcomes>
+            <median_os>8.5 months vs 7.3 months for placebo</median_os>
+            <hr>0.71 (95% CI 0.53-0.95)</hr>
+          </outcomes>
+          <indication>Second line with AFP greater than or equal to 400 ng/mL</indication>
+        </regimen>
+      </second_line>
+      <child_pugh_b>
+        <note>Limited data for systemic therapy in Child-Pugh B</note>
+        <sorafenib_data>Median OS 5.2 months in Child-Pugh B7</sorafenib_data>
+        <recommendation>Consider on case-by-case basis for well-compensated B7</recommendation>
+      </child_pugh_b>
+    </systemic_therapy>
+
+    <algorithm>
+      <bclc_0>Ablation or resection</bclc_0>
+      <bclc_a>Resection (if suitable) or ablation or liver transplant (if within criteria and suitable)</bclc_a>
+      <bclc_b>TACE or TARE (consider systemic therapy if unsuitable or refractory)</bclc_b>
+      <bclc_c>Systemic therapy (atezolizumab-bevacizumab or durvalumab-tremelimumab first-line)</bclc_c>
+      <bclc_d>Best supportive care</bclc_d>
+    </algorithm>
+  </treatment>
+
+  <multidisciplinary_care>
+    <recommendation>All HCC patients should be discussed at a specialist hepatobiliary MDT</recommendation>
+    <components>
+      <component>Hepatology</component>
+      <component>Liver surgery</component>
+      <component>Transplant surgery</component>
+      <component>Interventional radiology</component>
+      <component>Medical oncology</component>
+      <component>Diagnostic radiology</component>
+      <component>Pathology</component>
+      <component>Clinical nurse specialist</component>
+      <component>Palliative care</component>
+    </components>
+    <impact>MDT management associated with improved treatment allocation and survival</impact>
+  </multidisciplinary_care>
+
+  <palliative_care>
+    <indication>BCLC D stage, Child-Pugh C not suitable for transplant, ECOG PS 3-4</indication>
+    <indication>Patient preference after informed discussion</indication>
+    <components>
+      <component>Symptom management (pain, ascites, encephalopathy)</component>
+      <component>Advance care planning</component>
+      <component>Psychological support</component>
+      <component>Social support</component>
+    </components>
+    <prognosis>Median survival 3-4 months with best supportive care</prognosis>
+  </palliative_care>
+
+  <follow_up>
+    <post_curative_treatment>
+      <imaging>CT or MRI every 3-4 months for first 2 years, then every 6 months</imaging>
+      <afp>If elevated pre-treatment, monitor every 3 months</afp>
+      <recurrence_risk>50-70% at 5 years post-resection</recurrence_risk>
+    </post_curative_treatment>
+    <post_transplant>
+      <surveillance>CT chest/abdomen every 6 months for at least 5 years</surveillance>
+      <afp>Monitor if elevated pre-transplant</afp>
+    </post_transplant>
+    <on_systemic_therapy>
+      <imaging>CT or MRI every 8-12 weeks</imaging>
+      <response_assessment>RECIST 1.1 for systemic therapy, mRECIST for locoregional therapy</response_assessment>
+    </on_systemic_therapy>
+  </follow_up>
+</guideline>

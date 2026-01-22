@@ -1,18 +1,22 @@
 """
 Main entry point.
 
-This application generates N SCT (Script Concordance Test) items and saves them.
-The number of items is configured via NUM_SCTS_TO_GENERATE environment variable.
-Items are distributed across three clinical guidelines: American, British, and European.
-After generation, all items are exported to a CSV file for easy analysis.
+This application generates SCT (Script Concordance Test) items for liver cancer.
+Diseases supported: Hepatocellular Carcinoma (HCC) and Intrahepatic Cholangiocarcinoma (iCCA).
+Each disease has 5 guidelines, generating 20 questions per guideline (100 questions per disease).
+Questions are generated using 1 API query per SCT item (which contains 3 components: diagnosis, management, followup).
+The system supports multiple API keys with automatic rotation for rate limit handling.
 """
 
 import sys
 from pathlib import Path
-from typing import List
+from typing import Dict, List
 
-from .config import settings
-from .generator import export_generated_items_to_csv, generate_items_per_guideline
+from .config import settings, AVAILABLE_DISEASES
+from .generator import export_generated_items_to_csv
+from .generator.sct_generator import run_generation
+from .generator.progress import ProgressTracker
+from .llm.key_manager import AllKeysExhaustedException
 from .logging import get_logger, setup_logging
 from .schemas import SCTItem
 
@@ -20,66 +24,72 @@ logger = get_logger(__name__)
 
 
 def generate_scts(
-    num_items: int, model: str, domains: List[str], provider: str
-) -> List[SCTItem]:
+    model: str, provider: str, diseases: List[str], resume: bool = True
+) -> Dict[str, List[SCTItem]]:
     """
-    Generate N SCT items distributed across three clinical guidelines.
+    Generate SCT items for specified diseases.
 
-    Each guideline (American, British, European) will receive num_items items.
-    Total generated = num_items * 3 guidelines.
+    Each disease has 5 guidelines with 20 questions per guideline.
+    Total: 100 questions per disease, 200 questions total.
 
     Args:
-        num_items: Number of SCT items to generate PER GUIDELINE.
         model: LLM model to use.
-        domains: List of clinical domains to distribute items across.
         provider: LLM provider to use ("openai" or "gemini").
+        diseases: List of disease identifiers.
+        resume: Whether to resume from previous progress.
 
     Returns:
-        List of all generated SCTItem objects.
+        Dictionary mapping disease names to lists of generated SCTItem objects.
     """
-    logger.info(f"Starting generation of {num_items} SCT items PER GUIDELINE")
-    logger.info(f"Total items to generate: {num_items * 3} (across 3 guidelines)")
-    logger.info(f"Using provider: {provider}")
-    logger.info(f"Using model: {model}")
-    logger.info(f"Domains: {', '.join(domains)}")
+    # Calculate expected totals
+    total_diseases = len(diseases)
+    questions_per_guideline = settings.questions_per_guideline
+    
+    # Get total guidelines across all diseases
+    total_guidelines = sum(
+        len(AVAILABLE_DISEASES[d].guidelines) 
+        for d in diseases 
+        if d in AVAILABLE_DISEASES
+    )
+    total_expected = total_guidelines * questions_per_guideline
+
+    logger.info("=" * 70)
+    logger.info("STARTING SCT GENERATION")
+    logger.info("=" * 70)
+    logger.info(f"Provider: {provider.upper()}")
+    logger.info(f"Model: {model}")
+    logger.info(f"Diseases: {', '.join(diseases)}")
+    logger.info(f"Questions per guideline: {questions_per_guideline}")
+    logger.info(f"Total questions target: {total_expected}")
     logger.info("=" * 70)
 
-    # Select a domain for this generation run
-    # If you want to distribute across domains, you could modify this
-    domain = domains[0] if domains else None
-
     try:
-        # Generate items for all three guidelines
-        results = generate_items_per_guideline(
+        results = run_generation(
             model=model,
-            items_per_guideline=num_items,
             provider=provider,
-            domain=domain,
+            diseases=diseases,
+            resume=resume,
         )
 
-        # Flatten results into a single list
-        all_items = []
-        for guideline, items in results.items():
-            all_items.extend(items)
-
         # Calculate statistics
-        total_generated = len(all_items)
-        total_expected = num_items * 3
-        failed_count = total_expected - total_generated
-
+        total_generated = sum(len(items) for items in results.values())
+        
         logger.info("=" * 70)
-        logger.info("\nGeneration complete!")
-        logger.info(f"  Successful: {total_generated}/{total_expected}")
-        logger.info(f"  Failed: {failed_count}/{total_expected}")
-        logger.info("\n  Breakdown by guideline:")
-        for guideline, items in results.items():
-            logger.info(f"    {guideline.capitalize()}: {len(items)}/{num_items}")
-        logger.info("\n  Output folders:")
-        logger.info("    All items: data/generated/")
-        logger.info("    Validated: data/validated/")
-        logger.info("    Failed validation: data/validation_failed/")
+        logger.info("GENERATION COMPLETE")
+        logger.info("=" * 70)
+        logger.info(f"Total generated: {total_generated}/{total_expected}")
+        
+        for disease, items in results.items():
+            if disease in AVAILABLE_DISEASES:
+                expected = len(AVAILABLE_DISEASES[disease].guidelines) * questions_per_guideline
+                logger.info(f"  {disease}: {len(items)}/{expected}")
 
-        return all_items
+        return results
+
+    except AllKeysExhaustedException as e:
+        logger.error(f"All API keys exhausted: {e}")
+        logger.error("Progress has been saved. You can resume later with new API keys.")
+        raise
 
     except Exception as e:
         logger.error(f"Error during generation: {e}")
@@ -91,13 +101,15 @@ def main() -> int:
     Main entry point for the application.
 
     Returns:
-        Exit code (0 for success, 1 for failure).
+        Exit code (0 for success, 1 for failure, 2 for partial completion).
     """
     # Setup logging
     setup_logging(level=settings.log_level)
 
     logger.info("=" * 70)
     logger.info("SCT DATA GENERATION APPLICATION")
+    logger.info("=" * 70)
+    logger.info("Diseases: Hepatocellular Carcinoma (HCC), Intrahepatic Cholangiocarcinoma (iCCA)")
     logger.info("=" * 70)
 
     # Validate LLM provider
@@ -107,55 +119,66 @@ def main() -> int:
         logger.error("Must be 'openai' or 'gemini'")
         return 1
 
-    # Validate API key based on provider
+    # Validate API keys based on provider
     if provider == "openai":
-        if not settings.openai_api_key:
-            logger.error("ERROR: OPENAI_API_KEY not configured")
-            logger.error("Please set OPENAI_API_KEY in .env file or environment")
+        keys = settings.openai_keys_list
+        if not keys:
+            logger.error("ERROR: No OpenAI API keys configured")
+            logger.error("Please set OPENAI_API_KEYS or OPENAI_API_KEY in .env file")
             return 1
+        logger.info(f"OpenAI API keys configured: {len(keys)}")
     elif provider == "gemini":
-        if not settings.gemini_api_key:
-            logger.error("ERROR: GEMINI_API_KEY not configured")
-            logger.error("Please set GEMINI_API_KEY in .env file or environment")
+        keys = settings.gemini_keys_list
+        if not keys:
+            logger.error("ERROR: No Gemini API keys configured")
+            logger.error("Please set GEMINI_API_KEYS or GEMINI_API_KEY in .env file")
             return 1
+        logger.info(f"Gemini API keys configured: {len(keys)}")
 
-    if settings.num_scts_to_generate <= 0:
-        logger.error(
-            f"ERROR: Invalid NUM_SCTS_TO_GENERATE: {settings.num_scts_to_generate}"
-        )
-        logger.error("Must be a positive integer")
-        return 1
-
-    # Validate domains
-    domains = settings.domains
-    if not domains:
-        logger.error("ERROR: No domains configured")
-        logger.error("Please set DOMAIN_DISTRIBUTION in .env file")
+    # Validate diseases
+    diseases = settings.disease_list
+    valid_diseases = [d for d in diseases if d in AVAILABLE_DISEASES]
+    
+    if not valid_diseases:
+        logger.error("ERROR: No valid diseases configured")
+        logger.error(f"Available diseases: {list(AVAILABLE_DISEASES.keys())}")
         return 1
 
     # Display configuration
     logger.info("\nConfiguration:")
     logger.info(f"  LLM Provider: {provider.upper()}")
-    logger.info(f"  Items per guideline: {settings.num_scts_to_generate}")
-    logger.info(f"  Total items: {settings.num_scts_to_generate * 3} (3 guidelines)")
-    logger.info("  Guidelines: American, British, European")
     logger.info(f"  Model: {settings.model}")
-    logger.info(f"  Domains: {', '.join(domains)} ({len(domains)} total)")
-    logger.info("  All items: data/generated/")
-    logger.info("  Validated: data/validated/")
-    logger.info("  Failed: data/validation_failed/")
+    logger.info(f"  Diseases: {', '.join(valid_diseases)}")
+    logger.info(f"  Questions per guideline: {settings.questions_per_guideline}")
+    
+    for disease in valid_diseases:
+        config = AVAILABLE_DISEASES[disease]
+        logger.info(f"\n  {config.display_name}:")
+        logger.info(f"    Guidelines: {len(config.guidelines)}")
+        for guideline in config.guidelines:
+            logger.info(f"      - {guideline}")
+        logger.info(f"    Questions: {config.total_questions}")
+    
+    total_questions = sum(
+        AVAILABLE_DISEASES[d].total_questions 
+        for d in valid_diseases
+    )
+    logger.info(f"\n  TOTAL QUESTIONS: {total_questions}")
     logger.info("")
 
     try:
         # Generate SCTs
-        items = generate_scts(
-            num_items=settings.num_scts_to_generate,
+        results = generate_scts(
             model=settings.model,
-            domains=domains,
             provider=provider,
+            diseases=valid_diseases,
+            resume=True,  # Always try to resume from previous progress
         )
 
-        if not items:
+        # Count total items
+        total_items = sum(len(items) for items in results.values())
+        
+        if total_items == 0:
             logger.error("\nNo items were generated successfully")
             return 1
 
@@ -165,21 +188,20 @@ def main() -> int:
         logger.info("=" * 70)
 
         try:
-            generated_dir = Path("data/generated")
+            validated_dir = Path("data/validated")
             output_dir = Path("data/exports")
 
             csv_path = export_generated_items_to_csv(
-                generated_dir=generated_dir, output_dir=output_dir
+                validated_dir=validated_dir, output_dir=output_dir
             )
 
             if csv_path:
                 logger.info(f"✓ CSV export successful: {csv_path}")
             else:
-                logger.warning("CSV export skipped (no items found)")
+                logger.warning("CSV export skipped (no items found in validated folder)")
 
         except Exception as e:
             logger.error(f"Failed to export CSV: {e}")
-            # Don't fail the entire process if CSV export fails
             logger.warning("Continuing despite CSV export failure...")
 
         logger.info("\n" + "=" * 70)
@@ -187,9 +209,35 @@ def main() -> int:
         logger.info("=" * 70)
         return 0
 
+    except AllKeysExhaustedException:
+        logger.warning("\n" + "=" * 70)
+        logger.warning("APPLICATION STOPPED - API KEYS EXHAUSTED")
+        logger.warning("=" * 70)
+        logger.warning("Progress has been saved. To resume:")
+        logger.warning("  1. Add new API keys to your .env file")
+        logger.warning("  2. Run the application again - it will resume from where it stopped")
+        
+        # Try to export what we have
+        try:
+            validated_dir = Path("data/validated")
+            output_dir = Path("data/exports")
+            
+            csv_path = export_generated_items_to_csv(
+                validated_dir=validated_dir, 
+                output_dir=output_dir,
+                filename="sct_items_partial.csv"
+            )
+            if csv_path:
+                logger.info(f"✓ Partial results exported to: {csv_path}")
+        except Exception as e:
+            logger.error(f"Failed to export partial results: {e}")
+        
+        return 2  # Partial completion
+
     except KeyboardInterrupt:
         logger.warning("\n\nGeneration interrupted by user")
-        return 1
+        logger.warning("Progress has been saved. Run again to resume.")
+        return 2  # Partial completion
 
     except Exception as e:
         logger.error(f"\n\nFATAL ERROR: {e}")
