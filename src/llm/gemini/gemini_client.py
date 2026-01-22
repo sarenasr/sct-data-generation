@@ -170,19 +170,28 @@ class GeminiClient:
         error_str = str(error).lower()
         
         # Check for rate limit errors
-        if "429" in str(error) or "rate limit" in error_str or "resource exhausted" in error_str:
+        if "429" in str(error) or "rate limit" in error_str or "resource exhausted" in error_str or "too many requests" in error_str:
             retry_after = self._extract_retry_after(str(error))
             self.key_manager.mark_rate_limited(key, retry_after)
+            logger.info(f"Key ***{key[-4:]} rate limited, rotating to next key")
             return True
         
         # Check for quota exceeded
         if "quota" in error_str or "exceeded" in error_str:
             self.key_manager.mark_exhausted(key, str(error))
+            logger.info(f"Key ***{key[-4:]} quota exceeded, rotating to next key")
             return True
         
         # Check for authentication errors
         if "401" in str(error) or "403" in str(error) or "invalid" in error_str and "key" in error_str:
             self.key_manager.mark_exhausted(key, "Invalid API key")
+            logger.info(f"Key ***{key[-4:]} invalid, rotating to next key")
+            return True
+        
+        # Check for server errors (503, 500, etc.) - should retry
+        if "503" in str(error) or "500" in str(error) or "unavailable" in error_str or "overloaded" in error_str:
+            self.key_manager.mark_rate_limited(key, 30)  # Wait 30 seconds
+            logger.info(f"Server error on key ***{key[-4:]}, rotating to next key")
             return True
         
         # General error - mark and potentially retry

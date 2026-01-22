@@ -19,8 +19,8 @@ from .validator_model import SCTModelValidator
 logger = get_logger(__name__)
 
 # Retry configuration
-MAX_RETRIES = 3
-RETRY_DELAY_BASE = 5
+MAX_RETRIES = 5  # Increased to handle multiple API key rotations
+RETRY_DELAY_BASE = 3  # Reduced base delay since key rotation handles rate limits
 MAX_VALIDATION_RETRIES = 2  # Retries for validation failures
 
 
@@ -497,13 +497,17 @@ def run_generation(
                     retry_count += 1
                     error_str = str(e)
                     
-                    # Check if retryable
+                    # Check if retryable (include more error types for API key rotation)
                     is_retryable = (
                         "503" in error_str or
                         "429" in error_str or
                         "UNAVAILABLE" in error_str or
                         "overloaded" in error_str.lower() or
-                        "timeout" in error_str.lower()
+                        "timeout" in error_str.lower() or
+                        "quota" in error_str.lower() or
+                        "resource exhausted" in error_str.lower() or
+                        "rate limit" in error_str.lower() or
+                        "too many requests" in error_str.lower()
                     )
                     
                     if is_retryable and retry_count <= MAX_RETRIES:

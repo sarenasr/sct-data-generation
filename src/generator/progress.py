@@ -55,7 +55,8 @@ class GenerationProgress:
     
     @property
     def pending_count(self) -> int:
-        return sum(1 for q in self.questions.values() if q.status == "pending")
+        """Count of questions still needing generation (pending + failed)."""
+        return sum(1 for q in self.questions.values() if q.status in ["pending", "failed"])
 
     def get_progress_by_disease(self) -> Dict[str, Dict[str, int]]:
         """Get progress breakdown by disease."""
@@ -290,10 +291,11 @@ class ProgressTracker:
             self.save_progress()
     
     def get_pending_questions(self) -> List[QuestionProgress]:
-        """Get list of pending questions."""
+        """Get list of pending questions (includes failed questions for retry)."""
         if not self.progress:
             return []
-        return [q for q in self.progress.questions.values() if q.status == "pending"]
+        # Include both "pending" and "failed" statuses so failed questions get regenerated
+        return [q for q in self.progress.questions.values() if q.status in ["pending", "failed"]]
     
     def get_generated_questions(self) -> List[QuestionProgress]:
         """Get list of generated but not validated questions."""
